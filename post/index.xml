@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on RichardWWHH&#39;s site</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on RichardWWHH&#39;s site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 05 Nov 2021 14:17:08 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First</title>
+      <link>http://localhost:1313/post/first/</link>
+      <pubDate>Fri, 05 Nov 2021 14:17:08 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/first/</guid>
+      <description>&amp;lt;!doctype html&amp;gt;把博客从 Hexo 迁移到 Hugo - jdhao&amp;rsquo;s blog(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:&amp;ldquo;ca-pub-6058871559165202&amp;rdquo;,enable_page_level_ads:true});jdhao&amp;rsquo;s blogHomeArchivesTagsCategoriesAboutjdhao&amp;rsquo;s blogHomeArchivesTagsCategoriesAbout把博客从 Hexo 迁移到 Hugo2018-10-10Blog3146 words 7 mins read</description>
+    </item>
+    
+  </channel>
+</rss>
