@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Build your github pages! - RichardWWHH&#39;s site</title>
+  <title>Build your personal website with HUGO &amp; GitHub - RichardWWHH&#39;s site</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="RichardWWHH" /><meta name="description" content="@[TOC](个人静态网页搭建 GitHub Pages/Hugo) GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如sm" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="RichardWWHH" /><meta name="description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Build your github pages!" />
-<meta property="og:description" content="@[TOC](个人静态网页搭建 GitHub Pages/Hugo) GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如sm" />
+<meta property="og:title" content="Build your personal website with HUGO &amp; GitHub" />
+<meta property="og:description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/my-first-post/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-11-03T20:42:40+08:00" />
 <meta property="article:modified_time" content="2021-11-03T20:42:40+08:00" />
 
-<meta itemprop="name" content="Build your github pages!">
-<meta itemprop="description" content="@[TOC](个人静态网页搭建 GitHub Pages/Hugo) GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如sm"><meta itemprop="datePublished" content="2021-11-03T20:42:40+08:00" />
+<meta itemprop="name" content="Build your personal website with HUGO &amp; GitHub">
+<meta itemprop="description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面"><meta itemprop="datePublished" content="2021-11-03T20:42:40+08:00" />
 <meta itemprop="dateModified" content="2021-11-03T20:42:40+08:00" />
-<meta itemprop="wordCount" content="1737">
+<meta itemprop="wordCount" content="1863">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Build your github pages!"/>
-<meta name="twitter:description" content="@[TOC](个人静态网页搭建 GitHub Pages/Hugo) GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如sm"/>
+<meta name="twitter:title" content="Build your personal website with HUGO &amp; GitHub"/>
+<meta name="twitter:description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -125,7 +125,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Build your github pages!</h1>
+      <h1 class="post-title">Build your personal website with HUGO &amp; GitHub</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-11-03 </span>
@@ -160,14 +160,13 @@
         </li>
       </ul>
     </li>
-    <li><a href="#一个完整的工作流">一个完整的工作流</a></li>
+    <li><a href="#一个完整的工作流-写博文更改博文">一个完整的工作流 （写博文/更改博文）</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>@[TOC](个人静态网页搭建 GitHub Pages/Hugo)</p>
-<h1 id="github设置">GitHub设置</h1>
+      <h1 id="github设置">GitHub设置</h1>
 <ol start="0">
 <li>首先创建个人网站的一个repo：
 <strong>注意命名规则</strong>:一定是你的 用户名.github.io
@@ -254,7 +253,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new post/testpage.md
 </code></pre></td></tr></table>
 </div>
-</div><p>新的testpage.md页面会存储于content/post/testpage.md中，由于content文件夹是Hugo创建静态网页的内容来源</p>
+</div><p>新的testpage.md页面会存在content/post/testpage.md中，而content文件夹是Hugo创建静态网页的内容（你所写的博客基本都在这里）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -320,10 +319,16 @@ draft: <span class="nb">true</span>
 </li>
 <li>
 <p><code>feature_condition_size</code>：指定每篇文章最少要给出多少个tag在tag云中
-image_404 &amp; title_404 - 当文章找不到，显示的404图片
--<code>omit_categories</code> - 是否要忽略导航栏分类功能
--<code>[[params.additional_menus]]</code> - 提供在导航栏中提供额外的菜单，比如About页面
--<code>[params.social]</code> - 社交账户设置</p>
+image_404 &amp; title_404 - 当文章找不到，显示的404图片</p>
+</li>
+<li>
+<p><code>omit_categories</code> - 是否要忽略导航栏分类功能</p>
+</li>
+<li>
+<p><code>[[params.additional_menus]]</code> - 提供在导航栏中提供额外的菜单，比如About页面</p>
+</li>
+<li>
+<p><code>[params.social]</code> - 社交账户设置</p>
 </li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -370,7 +375,6 @@ image_404 &amp; title_404 - 当文章找不到，显示的404图片
 </span><span class="lnt">40
 </span><span class="lnt">41
 </span><span class="lnt">42
-</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">baseurl = &#34;https://fakeRichardWH.github.io&#34;
@@ -413,14 +417,13 @@ paginate = 5000 <span class="ni">#frontpage</span> pagination
   email          = &#34;testMe@gmail.com&#34;
   linkedin       = &#34;https://www.linkedin.com/in/richard-youngkin-0749763&#34;
   github         = &#34;https://github.com/youngkin&#34;
-  medium         = &#34;https://medium.com/@RichYoungkin&#34;
   stackoverflow  = &#34;https://stackoverflow.com/users/2646870/rich&#34;
   reddit         = &#34;https://www.reddit.com/user/elevation5280&#34;
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="常用命令hugo及git">常用命令（Hugo及Git）</h1>
 <h3 id="本地服务器启动">本地服务器启动</h3>
-<p>下面这个代码会启动一个Hugo Web服务器并且将本地服务器网站提供</p>
+<p>下面这个代码会启动一个本地的Hugo Web服务器</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -438,13 +441,33 @@ paginate = 5000 <span class="ni">#frontpage</span> pagination
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Web Server is available at http://localhost:1313/ <span class="o">(</span><span class="nb">bind</span> address 127.0.0.1<span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="https://img-blog.csdnimg.cn/4ff8476c173246429082a93f662a618d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</div><p>我们之后可以用浏览器打开该网址看看写的文章：</p>
+<p><img src="https://img-blog.csdnimg.cn/4ff8476c173246429082a93f662a618d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 <h3 id="heading"></h3>
-<p>git push -f</p>
-<h1 id="一个完整的工作流">一个完整的工作流</h1>
-<p>1.创建一个文档，用markdown语法
+<h1 id="一个完整的工作流-写博文更改博文">一个完整的工作流 （写博文/更改博文）</h1>
+<p>1.创建一个文档，用markdown语法 （推荐用VScode + Markdown的扩展，可以本地及时查看博文变动）
 2.本地测试文档，删除一些不必要的文件
-3.使用hugo命令</p>
+3.使用hugo命令
+4.使用git命令完成相应文章的上传/更新</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#写完博文之后</span>
+hugo server -D
+<span class="nb">cd</span> public
+git add .
+git commit <span class="s2">&#34;blog added&#34;</span>
+git push -u origin master <span class="c1">#一般都是在master分支上去操作</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里总结一下Hugo命令</p>
 
     </div>
 
