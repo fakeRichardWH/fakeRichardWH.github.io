@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>My First Post - RichardWWHH&#39;s site</title>
+  <title>Build your github pages! - RichardWWHH&#39;s site</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="RichardWWHH" /><meta name="description" content="test it subtitle Author Hao Wen" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="RichardWWHH" /><meta name="description" content="@[TOC](个人静态网页搭建 GitHub Pages/Hugo) GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如sm" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://fakeRichardWH.github.io/post/my-first-post/" />
+<link rel="canonical" href="http://localhost:1313/post/my-first-post/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="My First Post" />
-<meta property="og:description" content="test it subtitle Author Hao Wen" />
+<meta property="og:title" content="Build your github pages!" />
+<meta property="og:description" content="@[TOC](个人静态网页搭建 GitHub Pages/Hugo) GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如sm" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fakeRichardWH.github.io/post/my-first-post/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="http://localhost:1313/post/my-first-post/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-11-03T20:42:40+08:00" />
 <meta property="article:modified_time" content="2021-11-03T20:42:40+08:00" />
 
-<meta itemprop="name" content="My First Post">
-<meta itemprop="description" content="test it subtitle Author Hao Wen"><meta itemprop="datePublished" content="2021-11-03T20:42:40+08:00" />
+<meta itemprop="name" content="Build your github pages!">
+<meta itemprop="description" content="@[TOC](个人静态网页搭建 GitHub Pages/Hugo) GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如sm"><meta itemprop="datePublished" content="2021-11-03T20:42:40+08:00" />
 <meta itemprop="dateModified" content="2021-11-03T20:42:40+08:00" />
-<meta itemprop="wordCount" content="6">
+<meta itemprop="wordCount" content="1737">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="My First Post"/>
-<meta name="twitter:description" content="test it subtitle Author Hao Wen"/>
+<meta name="twitter:title" content="Build your github pages!"/>
+<meta name="twitter:description" content="@[TOC](个人静态网页搭建 GitHub Pages/Hugo) GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如sm"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -125,7 +125,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">My First Post</h1>
+      <h1 class="post-title">Build your github pages!</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-11-03 </span>
@@ -139,19 +139,312 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#test-it">test it</a>
+    <li><a href="#github设置">GitHub设置</a></li>
+    <li><a href="#hugo安装及配置">Hugo安装及配置</a></li>
+    <li><a href="#install-hugo-下载hugo">Install Hugo 下载Hugo</a></li>
+    <li><a href="#创建一个基础网站">创建一个基础网站</a>
       <ul>
-        <li><a href="#subtitle">subtitle</a></li>
+        <li><a href="#hugo网站文件夹目录">Hugo网站文件夹目录</a></li>
+        <li><a href="#选择并安装一个合适的主题并进行初始配置">选择并安装一个合适的主题并进行初始配置</a></li>
+        <li><a href="#本地测试一下你的新网站">本地测试一下你的新网站</a></li>
       </ul>
     </li>
+    <li><a href="#关于configtoml的一些设置偏好">关于config.toml的一些设置偏好</a></li>
+    <li><a href="#常用命令hugo及git">常用命令（Hugo及Git）</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#本地服务器启动">本地服务器启动</a></li>
+            <li><a href="#heading"></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#一个完整的工作流">一个完整的工作流</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h1 id="test-it">test it</h1>
-<h2 id="subtitle">subtitle</h2>
-<p>Author Hao Wen</p>
+      <p>@[TOC](个人静态网页搭建 GitHub Pages/Hugo)</p>
+<h1 id="github设置">GitHub设置</h1>
+<ol start="0">
+<li>首先创建个人网站的一个repo：
+<strong>注意命名规则</strong>:一定是你的 用户名.github.io
+比如smith.github.io
+比如下面这个图片:
+<img src="https://img-blog.csdnimg.cn/f9e2eab1ef854acdbdf0d423c345ab2f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="测试图片">
+1.为了后续的开发也可以再创建一个仓库用于后续的开发</li>
+</ol>
+<h1 id="hugo安装及配置">Hugo安装及配置</h1>
+<p>首先安装 <code>Hugo</code>，在不同系统上安装都很简单，我使用的是 Mac ，使用 <code>Homebrew</code> 可以安装 <code>Hugo</code>：</p>
+<h1 id="install-hugo-下载hugo">Install Hugo 下载Hugo</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="创建一个基础网站">创建一个基础网站</h1>
+<h2 id="hugo网站文件夹目录">Hugo网站文件夹目录</h2>
+<p>当你在当前目录下的终端内输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new site mySite 
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>mySite
+|&ndash;layout
+|&ndash;content
+|&ndash;static
+|&ndash;data
+|&ndash;themes
+|&ndash;config.toml
+|&ndash;archetypes</p>
+</blockquote>
+<ul>
+<li>content - <strong>内容文件夹</strong>开发中的内容大多数都保存在这里 也就是markdown文件存储的位置 你post的文章的md后缀文件也会出现在这里</li>
+<li>static - <strong>静态文件夹</strong>一些静态的文件，比如说嵌入的图片,<strong>图片位置</strong></li>
+<li>themes - <strong>主题文件夹</strong></li>
+<li>config.toml - <strong>配置文件</strong> 基础的一些网站设置，比如网站的名字</li>
+<li>archetypes - <strong>样例文件夹</strong> 可以透过 <code>hugo new &lt;contentdir/contentfile.md&gt;</code>来创建新的内容</li>
+</ul>
+<h2 id="选择并安装一个合适的主题并进行初始配置">选择并安装一个合适的主题并进行初始配置</h2>
+<p>挑选好一个theme之后load到你的本地</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git submodule add &lt;theme-github-url&gt; &lt;target-directory&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>下面我们要告诉Hugo我们所下载并将选择的主题</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;theme = &#34;&lt;theme-name&gt;&#34;&#39;</span> &gt;&gt; config.toml
+</code></pre></td></tr></table>
+</div>
+</div><p>我这里用的是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;theme = &#34;tranquil&#34;&#39;</span>&gt;&gt; config.toml
+</code></pre></td></tr></table>
+</div>
+</div><p>当然你也可以直接打开编辑器修改toml.config文件</p>
+<h2 id="本地测试一下你的新网站">本地测试一下你的新网站</h2>
+<p>输入下面的命令后会自动发布一篇测试文章：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new post/testpage.md
+</code></pre></td></tr></table>
+</div>
+</div><p>新的testpage.md页面会存储于content/post/testpage.md中，由于content文件夹是Hugo创建静态网页的内容来源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">---
+title: <span class="s2">&#34;Testpage&#34;</span>
+date: 2020-08-27T13:43:09-06:00
+draft: <span class="nb">true</span>
+---
+</code></pre></td></tr></table>
+</div>
+</div><p>打开archetypes/default.md可以发现，上面Testpage.md的内容是依赖下面的自动生成的，而draft的设置为true表明现在的Testpage处于草稿阶段，修改为false即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">---
+title: <span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span> <span class="s2">&#34; | title }}&#34;</span>
+date: <span class="o">{{</span> .Date <span class="o">}}</span>
+draft: <span class="nb">true</span>
+---
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>需要注意的是：</strong> 第一个<code>---</code>到第二个<code>---</code> 符号之间是<strong>front matter</strong>（Hugo的专用术语）类似于<strong>HTML</strong>中的<code>&lt;meta&gt;</code>标签是用来定义页面头部的一些信息（渲染标题和其他的元数据）的，而在第二个<code>---</code> 符号之后就是你的正文部分 或者说相当于HTML的body</p>
+<h1 id="关于configtoml的一些设置偏好">关于config.toml的一些设置偏好</h1>
+<ul>
+<li>
+<p><code>baseurl</code>: 就是你想发布的网站：如https://<your-github-id-here>.github.io</p>
+</li>
+<li>
+<p>title：标题，显示在每个页面的左上，一般都是自己的id</p>
+</li>
+<li>
+<p><code>languageCode</code>：页面语言，指定编码格式，比如en-us/en-gb/cn表示英语-美国/英语-英国</p>
+</li>
+<li>
+<p><code>paginate</code>：在主页上显示多少条博客内容</p>
+</li>
+<li>
+<p><code>[markup]</code>:这一部部分显示使用哪一种markup/down语法，它一般不会渲染HTML标签否则可能产生安全问题，但如果你想要强制使用的话：设置unsafe = true</p>
+</li>
+<li>
+<p><code>[params]</code> - 基础的参数设置</p>
+<ul>
+<li><code>header_image</code> - 默认的所有页面的背景图片，并且固定作为home页面和about页面的图片</li>
+<li><code>title</code> - 文章标题，显示在每个页面</li>
+<li><code>slogan</code> - 子标题</li>
+<li><code>sidebar_about_description</code>, <code>sidebar_avatar, &amp; about_me</code>：侧边栏介绍，侧边栏可以用于简单的自我介绍，提供一些个人简介之类的，而将about_me设置为true就可以实现了</li>
+</ul>
+</li>
+<li>
+<p><code>featured_tags</code>： 是用来指定有多少个tags你想在页面中显示</p>
+</li>
+<li>
+<p><code>feature_condition_size</code>：指定每篇文章最少要给出多少个tag在tag云中
+image_404 &amp; title_404 - 当文章找不到，显示的404图片
+-<code>omit_categories</code> - 是否要忽略导航栏分类功能
+-<code>[[params.additional_menus]]</code> - 提供在导航栏中提供额外的菜单，比如About页面
+-<code>[params.social]</code> - 社交账户设置</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">baseurl = &#34;https://fakeRichardWH.github.io&#34;
+title = &#34;fakeRichardWH&#34;
+theme = &#34;even&#34;
+languageCode = &#34;en-us&#34;
+paginate = 5000 <span class="ni">#frontpage</span> pagination
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  header_image = &#34;images/main_go_wideandtall_darklayer.jpeg&#34;
+  title = &#34;Software Engineering&#34;
+  slogan = &#34;$ grep -rni \&#34;The how&#39;s and why&#39;s\&#34; .&#34;
+  SEOTitle = &#34;fakeRichardWH Blog&#34;
+  keyword = &#34;fakeRichardWH, TestTools, MachineLEARNING, JAVA, SpringBoot&#34;
+ 
+  # Sidebar settings
+  sidebar_about_description = &#34;Husband, Skier, Cyclist, and, oh yeah, Software Developer&#34;
+  sidebar_avatar = &#34;images/MeAtUS.jpeg&#34;
+  about_me = true
+
+  featured_tags = true 
+  featured_condition_size = 2 # 当有多少条post时可以实现按标签索引 (大于)
+
+  image_404 = &#34;images/404-bg.jpg&#34;
+  title_404 = &#34;We couldn&#39;t find what you were looking for...&#34;
+
+  omit_categories = false
+
+  [[params.addtional_menus]]
+  title =  &#34;ABOUT&#34;
+  href =  &#34;/top/about/&#34;
+
+  [params.social]
+  rss            = true
+  email          = &#34;testMe@gmail.com&#34;
+  linkedin       = &#34;https://www.linkedin.com/in/richard-youngkin-0749763&#34;
+  github         = &#34;https://github.com/youngkin&#34;
+  medium         = &#34;https://medium.com/@RichYoungkin&#34;
+  stackoverflow  = &#34;https://stackoverflow.com/users/2646870/rich&#34;
+  reddit         = &#34;https://www.reddit.com/user/elevation5280&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="常用命令hugo及git">常用命令（Hugo及Git）</h1>
+<h3 id="本地服务器启动">本地服务器启动</h3>
+<p>下面这个代码会启动一个Hugo Web服务器并且将本地服务器网站提供</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo server -D
+</code></pre></td></tr></table>
+</div>
+</div><p>输入后会显示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Web Server is available at http://localhost:1313/ <span class="o">(</span><span class="nb">bind</span> address 127.0.0.1<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://img-blog.csdnimg.cn/4ff8476c173246429082a93f662a618d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h3 id="heading"></h3>
+<p>git push -f</p>
+<h1 id="一个完整的工作流">一个完整的工作流</h1>
+<p>1.创建一个文档，用markdown语法
+2.本地测试文档，删除一些不必要的文件
+3.使用hugo命令</p>
 
     </div>
 
@@ -173,11 +466,7 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/first/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">First</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
+        
         
       </nav>
     </footer>
@@ -196,7 +485,7 @@
       <div class="social-links">
       <a href="mailto:wenhao2018@hotmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://github.com/fakeRichardWH" class="iconfont icon-github" title="github"></a>
-  <a href="https://fakeRichardWH.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
