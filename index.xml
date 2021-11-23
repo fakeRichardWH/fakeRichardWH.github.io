@@ -1,34 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title></title>
-    <link>/</link>
-    <description>Recent content on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Nov 2021 20:42:40 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Tue, 23 Nov 2021 15:17:46 +0800</pubDate>
-      
-      <guid>/about/</guid>
-      <description>关于我/About Me Resume</description>
-    </item>
-    
-    <item>
-      <title>利用Hugo和GitHub Pages搭建个人博客网站</title>
-      <link>/post/my-first-post/</link>
-      <pubDate>Wed, 03 Nov 2021 20:42:40 +0800</pubDate>
-      
-      <guid>/post/my-first-post/</guid>
-      <description>GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的用户名.github.io比如sophshep.github.io 详见下面这个图片:   建议：为了后续的开发也可以再创建一个仓库用于后续的开发
-Hugo安装及配置 首先安装 Hugo，在不同系统上安装都很简单，我使用的是 Mac ，使用 Homebrew 可以安装 Hugo：
-下载Hugo 1  brew install hugo   创建一个基础网站 当你在当前路径下的终端内输入
-1  hugo new site mySite   就会自动创建一个mySite的根文件夹┑(￣Д ￣)┍
-Hugo网站文件夹目录 顺带提一嘴这个文件结构，对后续写文章比较重要
- mySite |&amp;ndash;layout |&amp;ndash;content |&amp;ndash;static |&amp;ndash;data |&amp;ndash;themes |&amp;ndash;config.toml |&amp;ndash;archetypes
-  content - 内容文件夹开发中的内容大多数都保存在这里 也就是markdown文件存储的位置 你post的文章的md后缀文件也会出现在这里 static - 静态文件夹一些静态的文件，比如说嵌入的图片,图片位置 themes - 主题文件夹 config.toml - 配置文件 基础的一些网站设置，比如网站的名字 archetypes - 样例文件夹 可以透过 hugo new &amp;lt;contentdir/contentfile.md&amp;gt;来创建新的内容  选择并安装一个合适的主题并进行初始配置 挑选好一个theme之后load到你的本地</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>fakeRichardWH的个人网站</title>
+        <link>http://localhost:1313/</link>
+        <description>这是我的全新 Hugo 网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 03 Nov 2021 20:42:40 &#43;0800</lastBuildDate>
+            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
 </rss>
