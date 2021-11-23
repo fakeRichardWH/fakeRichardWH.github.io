@@ -7,7 +7,7 @@
 详见下面这个图片:
 ![测试图片](https://img-blog.csdnimg.cn/f9e2eab1ef854acdbdf0d423c345ab2f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-建议：为了后续的开发也可以再创建一个仓库用于后续的开发
+建议：为了后续的开发也可以再创建一个仓库
 
 # Hugo安装及配置
 首先安装 `Hugo`，在不同系统上安装都很简单，我使用的是 Mac ，使用 `Homebrew` 可以安装 `Hugo`：
