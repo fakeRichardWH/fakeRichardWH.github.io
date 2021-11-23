@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Build your personal website with HUGO &amp; GitHub - RichardWWHH&#39;s site</title>
+  <title>利用Hugo和GitHub Pages搭建个人博客网站 - RichardWWHH&#39;s site</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="RichardWWHH" /><meta name="description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="RichardWWHH" /><meta name="description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面" /><meta name="keywords" content="Hugo, Git" />
 
 
 
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Build your personal website with HUGO &amp; GitHub" />
+<meta property="og:title" content="利用Hugo和GitHub Pages搭建个人博客网站" />
 <meta property="og:description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/my-first-post/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-11-03T20:42:40+08:00" />
 <meta property="article:modified_time" content="2021-11-03T20:42:40+08:00" />
 
-<meta itemprop="name" content="Build your personal website with HUGO &amp; GitHub">
+<meta itemprop="name" content="利用Hugo和GitHub Pages搭建个人博客网站">
 <meta itemprop="description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面"><meta itemprop="datePublished" content="2021-11-03T20:42:40+08:00" />
 <meta itemprop="dateModified" content="2021-11-03T20:42:40+08:00" />
-<meta itemprop="wordCount" content="1863">
+<meta itemprop="wordCount" content="1860">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Build your personal website with HUGO &amp; GitHub"/>
+<meta name="twitter:title" content="利用Hugo和GitHub Pages搭建个人博客网站"/>
 <meta name="twitter:description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的 用户名.github.io 比如smith.github.io 比如下面"/>
 
 <!--[if lte IE 9]>
@@ -78,7 +78,7 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     <a href="/">
-        <li class="mobile-menu-item">Home</li>
+        <li class="mobile-menu-item">Home/主页</li>
       </a><a href="/post/">
         <li class="mobile-menu-item">Archives/文章</li>
       </a><a href="/tags/">
@@ -106,7 +106,7 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
+        <a class="menu-item-link" href="/">Home/主页</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/post/">Archives/文章</a>
       </li><li class="menu-item">
@@ -125,7 +125,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Build your personal website with HUGO &amp; GitHub</h1>
+      <h1 class="post-title">利用Hugo和GitHub Pages搭建个人博客网站</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-11-03 </span>
@@ -160,7 +160,11 @@
         </li>
       </ul>
     </li>
-    <li><a href="#一个完整的工作流-写博文更改博文">一个完整的工作流 （写博文/更改博文）</a></li>
+    <li><a href="#一个完整的工作流-写博文更改博文">一个完整的工作流 （写博文/更改博文）</a>
+      <ul>
+        <li><a href="#总结一下hugo命令">总结一下Hugo命令</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -460,14 +464,14 @@ paginate = 5000 <span class="ni">#frontpage</span> pagination
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#写完博文之后</span>
-hugo server -D
+hugo
 <span class="nb">cd</span> public
 git add .
-git commit <span class="s2">&#34;blog added&#34;</span>
+git commit -m <span class="s2">&#34;blog added&#34;</span>
 git push -u origin master <span class="c1">#一般都是在master分支上去操作</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>这里总结一下Hugo命令</p>
+</div><h2 id="总结一下hugo命令">总结一下Hugo命令</h2>
 
     </div>
 
