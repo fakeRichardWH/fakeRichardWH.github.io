@@ -1,8 +1,6 @@
 # About
 
-<div align = "left">
-<img src = "/static/images/mstile-150x150.png">
-</div>
+
 ## 一段小诗
 
 *Rage, rage against the dying of the light!*
