@@ -1,7 +1,6 @@
 # About
 
 
-## 一段小诗
 
 *Rage, rage against the dying of the light!*
 _Old days shall fade away._
