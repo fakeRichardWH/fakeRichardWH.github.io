@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>利用Hugo和GitHub Pages搭建个人博客网站 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="利用Hugo和GitHub Pages搭建个人博客网站" />
+<meta property="og:description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的用户名.github.io比如sophshep.github.io 详" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/hugocreatesite/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-03T20:42:40+08:00" />
+<meta property="article:modified_time" content="2021-11-03T20:42:40+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+
+<meta name="twitter:title" content="利用Hugo和GitHub Pages搭建个人博客网站"/>
+<meta name="twitter:description" content="GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的用户名.github.io比如sophshep.github.io 详"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/hugocreatesite/" /><link rel="next" href="http://localhost:1313/post/dynamicprogramming/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "利用Hugo和GitHub Pages搭建个人博客网站",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/post\/hugocreatesite\/"
+        },"genre": "post","keywords": "Hugo, GitHub, toml","wordcount":  2157 ,
+        "url": "http:\/\/localhost:1313\/post\/hugocreatesite\/","datePublished": "2021-11-03T20:42:40+08:00","dateModified": "2021-11-03T20:42:40+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "RichardWWHH"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="fakeRichardWH的个人网站"></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/post/"> 文章/articles </a><a class="menu-item" href="/tags/"> 标签/tags </a><a class="menu-item" href="/categories/"> 分类/categories </a><a class="menu-item" href="/about/"> 关于我/about me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="fakeRichardWH的个人网站"></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/post/" title="">文章/articles</a><a class="menu-item" href="/tags/" title="">标签/tags</a><a class="menu-item" href="/categories/" title="">分类/categories</a><a class="menu-item" href="/about/" title="">关于我/about me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">利用Hugo和GitHub Pages搭建个人博客网站</h1><div class="content" id="content"><h1 id="github设置">GitHub设置</h1>
+<ol start="0">
+<li>首先创建个人网站的一个repo：
+<strong>注意命名规则</strong>:一定是你的<code>用户名.github.io</code>比如<code>sophshep.github.io</code>
+详见下面这个图片:
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/f9e2eab1ef854acdbdf0d423c345ab2f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16"
+        data-srcset="https://img-blog.csdnimg.cn/f9e2eab1ef854acdbdf0d423c345ab2f.png?x-oss-process=image/watermark%2ctype_ZHJvaWRzYW5zZmFsbGJhY2s%2cshadow_50%2ctext_Q1NETiBAUmljaGFyZHd3aGg=%2csize_20%2ccolor_FFFFFF%2ct_70%2cg_se%2cx_16, https://img-blog.csdnimg.cn/f9e2eab1ef854acdbdf0d423c345ab2f.png?x-oss-process=image/watermark%2ctype_ZHJvaWRzYW5zZmFsbGJhY2s%2cshadow_50%2ctext_Q1NETiBAUmljaGFyZHd3aGg=%2csize_20%2ccolor_FFFFFF%2ct_70%2cg_se%2cx_16 1.5x, https://img-blog.csdnimg.cn/f9e2eab1ef854acdbdf0d423c345ab2f.png?x-oss-process=image/watermark%2ctype_ZHJvaWRzYW5zZmFsbGJhY2s%2cshadow_50%2ctext_Q1NETiBAUmljaGFyZHd3aGg=%2csize_20%2ccolor_FFFFFF%2ct_70%2cg_se%2cx_16 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/f9e2eab1ef854acdbdf0d423c345ab2f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16"
+        title="测试图片" /></li>
+</ol>
+<p>建议：为了后续的开发也可以再创建一个仓库</p>
+<h1 id="hugo安装及配置">Hugo安装及配置</h1>
+<p>首先安装 <code>Hugo</code>，在不同系统上安装都很简单，我使用的是 Mac ，使用 <code>Homebrew</code> 可以安装 <code>Hugo</code>：</p>
+<h3 id="下载hugo">下载Hugo</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">brew install hugo
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="创建一个基础网站">创建一个基础网站</h1>
+<p>当你在当前路径下的终端内输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new site mySite 
+</code></pre></td></tr></table>
+</div>
+</div><p>就会自动创建一个mySite的根文件夹┑(￣Д ￣)┍</p>
+<h3 id="hugo网站文件夹目录">Hugo网站文件夹目录</h3>
+<p>顺带提一嘴这个文件结构，对后续写文章比较重要</p>
+<blockquote>
+<p>mySite
+|&ndash;layout
+|&ndash;content
+|&ndash;static
+|&ndash;data
+|&ndash;themes
+|&ndash;config.toml
+|&ndash;archetypes</p>
+</blockquote>
+<ul>
+<li>content - <strong>内容文件夹</strong>开发中的内容大多数都保存在这里 也就是markdown文件存储的位置 你post的文章的md后缀文件也会出现在这里</li>
+<li>static - <strong>静态文件夹</strong>一些静态的文件，比如说嵌入的图片,<strong>图片位置</strong></li>
+<li>themes - <strong>主题文件夹</strong></li>
+<li>config.toml - <strong>配置文件</strong> 基础的一些网站设置，比如网站的名字</li>
+<li>archetypes - <strong>样例文件夹</strong> 可以透过 <code>hugo new &lt;contentdir/contentfile.md&gt;</code>来创建新的内容</li>
+</ul>
+<h2 id="选择并安装一个合适的主题并进行初始配置">选择并安装一个合适的主题并进行初始配置</h2>
+<p>挑选好一个theme之后load到你的本地</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git submodule add &lt;theme-github-url&gt; &lt;target-directory&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>下面我们要告诉Hugo我们所将使用的主题</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;theme = &#34;&lt;theme-name&gt;&#34;&#39;</span> &gt;&gt; config.toml
+</code></pre></td></tr></table>
+</div>
+</div><p>我这里用的是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;theme = &#34;even&#34;&#39;</span>&gt;&gt; config.toml
+</code></pre></td></tr></table>
+</div>
+</div><p>当然你也可以直接打开编辑器修改toml.config文件</p>
+<h2 id="本地测试一下你的新网站及博文">本地测试一下你的新网站及博文</h2>
+<p>输入下面的命令后会自动发布一篇测试文章：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new post/testpage.md
+</code></pre></td></tr></table>
+</div>
+</div><p>新的testpage.md页面会存在content/post/testpage.md中，而content文件夹是Hugo创建静态网页的内容（你所写的博客基本都在这里）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">---
+title: <span class="s2">&#34;Testpage&#34;</span>
+date: 2020-08-27T13:43:09-06:00
+draft: <span class="nb">true</span>
+---
+</code></pre></td></tr></table>
+</div>
+</div><p>打开archetypes/default.md可以发现，上面Testpage.md的内容是依赖下面的自动生成的，而draft的设置为true表明现在的Testpage处于草稿阶段，修改为false即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">---
+title: <span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span> <span class="s2">&#34; | title }}&#34;</span>
+date: <span class="o">{{</span> .Date <span class="o">}}</span>
+draft: <span class="nb">true</span>
+---
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>需要注意的是：</strong> 第一个<code>---</code>到第二个<code>---</code> 符号之间是<strong>front matter</strong>（Hugo的专用术语）类似于<strong>HTML</strong>中的<code>&lt;meta&gt;</code>标签是用来定义页面头部的一些信息（渲染标题和其他的元数据）的，而在第二个<code>---</code> 符号之后就是你的正文部分 或者说相当于HTML的body</p>
+<h1 id="关于configtoml的一些设置偏好">关于config.toml的一些设置偏好</h1>
+<ul>
+<li>
+<p><code>baseurl</code>: 就是你想发布的网站：如https://<your-github-id-here>.github.io</p>
+</li>
+<li>
+<p>title：标题，显示在每个页面的左上，一般都是自己的id</p>
+</li>
+<li>
+<p><code>languageCode</code>：页面语言，指定编码格式，比如en-us/en-gb/cn表示英语-美国/英语-英国</p>
+</li>
+<li>
+<p><code>paginate</code>：在主页上显示多少条博客内容</p>
+</li>
+<li>
+<p><code>[markup]</code>:这一部部分显示使用哪一种markup/down语法，它一般不会渲染HTML标签否则可能产生安全问题，但如果你想要强制使用的话：设置unsafe = true</p>
+</li>
+<li>
+<p><code>[params]</code> - 基础的参数设置</p>
+<ul>
+<li><code>header_image</code> - 默认的所有页面的背景图片，并且固定作为home页面和about页面的图片</li>
+<li><code>title</code> - 文章标题，显示在每个页面</li>
+<li><code>slogan</code> - 子标题</li>
+<li><code>sidebar_about_description</code>, <code>sidebar_avatar, &amp; about_me</code>：侧边栏介绍，侧边栏可以用于简单的自我介绍，提供一些个人简介之类的，而将about_me设置为true就可以实现了</li>
+</ul>
+</li>
+<li>
+<p><code>featured_tags</code>： 是用来指定有多少个tags你想在页面中显示</p>
+</li>
+<li>
+<p><code>feature_condition_size</code>：指定每篇文章最少要给出多少个tag在tag云中
+image_404 &amp; title_404 - 当文章找不到，显示的404图片</p>
+</li>
+<li>
+<p><code>omit_categories</code> - 是否要忽略导航栏分类功能</p>
+</li>
+<li>
+<p><code>[[params.additional_menus]]</code> - 提供在导航栏中提供额外的菜单，比如About页面</p>
+</li>
+<li>
+<p><code>[params.social]</code> - 社交账户设置</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">baseurl = &#34;https://fakeRichardWH.github.io&#34;
+title = &#34;fakeRichardWH&#34;
+theme = &#34;even&#34;
+languageCode = &#34;en-us&#34;
+paginate = 5000 <span class="ni">#frontpage</span> pagination
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  header_image = &#34;images/main_go_wideandtall_darklayer.jpeg&#34;
+  title = &#34;Software Engineering&#34;
+  slogan = &#34;$ grep -rni \&#34;The how&#39;s and why&#39;s\&#34; .&#34;
+  SEOTitle = &#34;fakeRichardWH Blog&#34;
+  keyword = &#34;fakeRichardWH, TestTools, MachineLEARNING, JAVA, SpringBoot&#34;
+ 
+  # Sidebar settings
+  sidebar_about_description = &#34;Husband, Skier, Cyclist, and, oh yeah, Software Developer&#34;
+  sidebar_avatar = &#34;images/MeAtUS.jpeg&#34;
+  about_me = true
+
+  featured_tags = true 
+  featured_condition_size = 2 # 当有多少条post时可以实现按标签索引 (大于)
+
+  image_404 = &#34;images/404-bg.jpg&#34;
+  title_404 = &#34;We couldn&#39;t find what you were looking for...&#34;
+
+  omit_categories = false
+
+  [[params.addtional_menus]]
+  title =  &#34;ABOUT&#34;
+  href =  &#34;/top/about/&#34;
+
+  [params.social]
+  rss            = true
+  email          = &#34;testMe@gmail.com&#34;
+  linkedin       = &#34;https://www.linkedin.com/in/richard-youngkin-0749763&#34;
+  github         = &#34;https://github.com/youngkin&#34;
+  stackoverflow  = &#34;https://stackoverflow.com/users/2646870/rich&#34;
+  reddit         = &#34;https://www.reddit.com/user/elevation5280&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="常用命令hugo及git">常用命令（Hugo及Git）</h1>
+<h3 id="本地服务器启动">本地服务器启动</h3>
+<p>下面这个代码会启动一个本地的Hugo Web服务器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo server -D
+</code></pre></td></tr></table>
+</div>
+</div><p>输入后会显示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Web Server is available at http://localhost:1313/ <span class="o">(</span><span class="nb">bind</span> address 127.0.0.1<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们之后可以用浏览器打开该网址看看写的文章：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/4ff8476c173246429082a93f662a618d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16"
+        data-srcset="https://img-blog.csdnimg.cn/4ff8476c173246429082a93f662a618d.png?x-oss-process=image/watermark%2ctype_ZHJvaWRzYW5zZmFsbGJhY2s%2cshadow_50%2ctext_Q1NETiBAUmljaGFyZHd3aGg=%2csize_20%2ccolor_FFFFFF%2ct_70%2cg_se%2cx_16, https://img-blog.csdnimg.cn/4ff8476c173246429082a93f662a618d.png?x-oss-process=image/watermark%2ctype_ZHJvaWRzYW5zZmFsbGJhY2s%2cshadow_50%2ctext_Q1NETiBAUmljaGFyZHd3aGg=%2csize_20%2ccolor_FFFFFF%2ct_70%2cg_se%2cx_16 1.5x, https://img-blog.csdnimg.cn/4ff8476c173246429082a93f662a618d.png?x-oss-process=image/watermark%2ctype_ZHJvaWRzYW5zZmFsbGJhY2s%2cshadow_50%2ctext_Q1NETiBAUmljaGFyZHd3aGg=%2csize_20%2ccolor_FFFFFF%2ct_70%2cg_se%2cx_16 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/4ff8476c173246429082a93f662a618d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAUmljaGFyZHd3aGg=,size_20,color_FFFFFF,t_70,g_se,x_16"
+        title="在这里插入图片描述" /></p>
+<h3 id="heading"></h3>
+<h1 id="一个完整的工作流-写博文更改博文">一个完整的工作流 （写博文/更改博文）</h1>
+<p>1.创建一个文档<code>hugo new post/my-xxx-post.md</code>，用markdown语法 （推荐用VScode + Markdown的扩展，可以本地及时查看博文变动）
+2.本地测试文档，删除一些不必要的文件
+3.使用hugo命令
+4.使用git命令完成相应文章的上传/更新</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#写完博文之后</span>
+hugo
+<span class="nb">cd</span> public
+git add .
+git commit -m <span class="s2">&#34;blog added&#34;</span>
+git push -u origin master <span class="c1">#一般都是在master分支上去操作</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="总结一下hugo命令">总结一下Hugo命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo -D     <span class="c1">#搭建静态页面 输出到 ./public 目录中 如果不另外指定的话</span>
+hugo server <span class="c1"># 一般是用于本地web服务器校对</span>
+hugo        <span class="c1">#部署时使用</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="content的目录结构">content的目录结构</h2>
+<p>用下面一个样例结构来进行说明</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">content/
+├── about
+│   ├── index.md
+├── posts
+│   ├── my-post
+│   │   ├── content1.md
+│   │   ├── content2.md
+│   │   ├── image1.jpg
+│   │   ├── image2.png
+│   │   └── index.md
+│   └── my-other-post
+│       └── index.md
+│
+└── another-section
+    ├── ..
+    └── not-a-leaf-bundle
+        ├── ..
+        └── another-leaf-bundle
+            └── index.md
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这个是一个典型的四级目录包</p>
+<ol>
+<li>about: 建立在root级别之下，其中只有一个index.md文件</li>
+<li>my-post:</li>
+<li>image1:</li>
+<li>image2:</li>
+<li>my-other-post:</li>
+</ol>
+</div><div id="comments"></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">RichardWWHH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
