@@ -5,10 +5,10 @@
         <description>Hugo - Category - fakeRichardWH的个人网站</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 03 Nov 2021 20:42:40 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/hugo/" rel="self" type="application/rss+xml" /><item>
     <title>利用Hugo和GitHub Pages搭建个人博客网站</title>
-    <link>http://localhost:1313/post/my-first-post/</link>
+    <link>http://localhost:1313/post/hugocreatesite/</link>
     <pubDate>Wed, 03 Nov 2021 20:42:40 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://localhost:1313/post/my-first-post/</guid>
+    <guid>http://localhost:1313/post/hugocreatesite/</guid>
     <description><![CDATA[GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的用户名.github.io比如sophshep.github.io 详]]></description>
 </item></channel>
 </rss>

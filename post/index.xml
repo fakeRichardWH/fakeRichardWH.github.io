@@ -6,13 +6,40 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Nov 2021 20:42:40 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Nov 2021 20:57:19 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CopyListWithRand</title>
+      <link>http://localhost:1313/post/copylistwithrand/</link>
+      <pubDate>Wed, 24 Nov 2021 20:57:19 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/copylistwithrand/</guid>
+      <description>给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。构造这个链表的 深拷贝。 深拷贝应该正好由</description>
+    </item>
+    
+    <item>
+      <title>Stack</title>
+      <link>http://localhost:1313/post/stack/</link>
+      <pubDate>Wed, 24 Nov 2021 17:30:02 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/stack/</guid>
+      <description>为什么Java的集合类没有单独的Stack接口呢？因为有个遗留类名字就叫Stack，出于兼容性考虑，所以没办法创建Stack接口，只能用De</description>
+    </item>
+    
+    <item>
+      <title>DynamicProgramming</title>
+      <link>http://localhost:1313/post/palindromelinkedlist/</link>
+      <pubDate>Wed, 24 Nov 2021 17:17:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/palindromelinkedlist/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>利用Hugo和GitHub Pages搭建个人博客网站</title>
-      <link>http://localhost:1313/post/my-first-post/</link>
+      <link>http://localhost:1313/post/hugocreatesite/</link>
       <pubDate>Wed, 03 Nov 2021 20:42:40 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/my-first-post/</guid>
+      <guid>http://localhost:1313/post/hugocreatesite/</guid>
       <description>GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的用户名.github.io比如sophshep.github.io 详</description>
     </item>
     
