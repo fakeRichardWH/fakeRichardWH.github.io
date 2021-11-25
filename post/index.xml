@@ -31,7 +31,7 @@
       <pubDate>Wed, 24 Nov 2021 17:17:26 +0800</pubDate>
       
       <guid>http://localhost:1313/post/palindromelinkedlist/</guid>
-      <description></description>
+      <description>Q1: 判断一个链表 是否属于回文结构 1 2 3 4 5 6 7 8 9 // example1 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 23 -&amp;gt; 2 -&amp;gt; 1 output: true // example2 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 2 -&amp;gt; 1 output: true // example3 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 3 -&amp;gt; 1 output: false 思路</description>
     </item>
     
     <item>
