@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="CopyListWithRand"/>
 <meta name="twitter:description" content="给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。构造这个链表的 深拷贝。 深拷贝应该正好由"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/copylistwithrand/" /><link rel="prev" href="http://localhost:1313/post/stack/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/copylistwithrand/" /><link rel="prev" href="http://localhost:1313/post/stack/" /><link rel="next" href="http://localhost:1313/post/deeplearning/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/post\/copylistwithrand\/"
-        },"genre": "post","keywords": "‘java’, ‘LinkedList‘","wordcount":  1582 ,
+        },"genre": "post","keywords": "‘java’, ‘LinkedList‘","wordcount":  1594 ,
         "url": "http:\/\/localhost:1313\/post\/copylistwithrand\/","datePublished": "2021-11-24T20:57:19+08:00","dateModified": "2021-11-24T20:57:19+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -130,10 +130,10 @@ random_index：随机指针指向的节点索引（范围从 0 到 n-1）；�
 <li>最后我们只需要将原始链表从新构成的链表分离出来就可以了，返回的答案也要是新的拷贝链表的头节点</li>
 </ol>
 <blockquote>
-<p>举个例子来说：
-1 -&gt; 1' -&gt; 2 -&gt; 2'
-原始链表中：2的<code>random</code>指向了1，那么在设置2‘的<code>random</code>时只需要将其指向1的<code>next</code>就可以了</p>
+<p>举个例子来说一个新构成的链表如下：
+1 -&gt; 1' -&gt; 2 -&gt; 2'</p>
 </blockquote>
+<p>假定原始链表中：<code>2</code>的<code>random</code>指向了<code>1</code>，那么在设置<code>2‘</code>的<code>random</code>时只需要将其指向1的<code>next</code>就可以了</p>
 <p>两种思路的代码实现：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

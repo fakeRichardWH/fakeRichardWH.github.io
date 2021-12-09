@@ -6,7 +6,52 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Nov 2021 20:57:19 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Dec 2021 19:41:09 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DeepLearning CNNfundamentals1</title>
+      <link>http://localhost:1313/post/deeplearning-cnnfundamentals1/</link>
+      <pubDate>Tue, 07 Dec 2021 19:41:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/deeplearning-cnnfundamentals1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FindLoopNodeInLinkeList</title>
+      <link>http://localhost:1313/post/findloopnodeinlinkelist/</link>
+      <pubDate>Sat, 04 Dec 2021 16:42:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/findloopnodeinlinkelist/</guid>
+      <description>题目描述：找到两个链表的相交节点， loop1 == null， loop2 == null，但是二者相交</description>
+    </item>
+    
+    <item>
+      <title>RecommendationSystem01</title>
+      <link>http://localhost:1313/post/recommendationsystem01/</link>
+      <pubDate>Thu, 02 Dec 2021 18:46:07 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/recommendationsystem01/</guid>
+      <description>推荐系统的实验方法分类 1.离线实验 通过日志系统，获取用户行为数据，按照一定格式生产出一个标准的数据集 将数据集划分为训练集和测试集 在训练集上训</description>
+    </item>
+    
+    <item>
+      <title>Kafka01</title>
+      <link>http://localhost:1313/post/kafka01/</link>
+      <pubDate>Thu, 02 Dec 2021 13:02:21 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/kafka01/</guid>
+      <description>Message Queue:消息队列，就是对一些请求访问服务器的操作，进行缓存，不直接访问服务器， 由于服务器本身资源的有限性，为了保证访问的稳定性，在请求</description>
+    </item>
+    
+    <item>
+      <title>DeepLearning TensorFlow笔记</title>
+      <link>http://localhost:1313/post/deeplearning/</link>
+      <pubDate>Wed, 01 Dec 2021 14:58:36 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/deeplearning/</guid>
+      <description>n阶张量 维度 张量 0-D 标量 1-D 向量 判断张量是多少阶的，就看左侧括号有多少个，0个就是0阶的， tf.Variable tensorflow数据类型有： tf.int, tf.float: tf.int32, tf.float32, tf.float64 tf.bool: tf. tf.string: 使用</description>
+    </item>
+    
     <item>
       <title>CopyListWithRand</title>
       <link>http://localhost:1313/post/copylistwithrand/</link>
