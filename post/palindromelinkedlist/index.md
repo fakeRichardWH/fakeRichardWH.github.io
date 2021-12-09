@@ -1,4 +1,4 @@
-# DynamicProgramming
+# leetcode-判断一个链表是否为回文结构
 
 # Q1: 判断一个链表
 是否属于回文结构
@@ -16,8 +16,6 @@
 
 ## 思路一:
 利用一个stack来实现
-```math
-Time\ Complexity: \mathcal{O}(n)
-\\
-Space\ Complexity: \mathcal{O}(n)
-```
+Time Complexity: $\mathcal{O}(n)$
+Space Complexity: $\mathcal{O}(n)$
+

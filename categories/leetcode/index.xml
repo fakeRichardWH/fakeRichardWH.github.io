@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>java - Category - fakeRichardWH的个人网站</title>
-        <link>http://localhost:1313/categories/java/</link>
-        <description>java - Category - fakeRichardWH的个人网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 24 Nov 2021 20:57:19 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/java/" rel="self" type="application/rss+xml" /><item>
+        <title>leetcode - Category - fakeRichardWH的个人网站</title>
+        <link>http://localhost:1313/categories/leetcode/</link>
+        <description>leetcode - Category - fakeRichardWH的个人网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 24 Nov 2021 20:57:19 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/leetcode/" rel="self" type="application/rss+xml" /><item>
     <title>leetcode-Copy Linkedlist with Random pointer</title>
     <link>http://localhost:1313/post/copylistwithrand/</link>
     <pubDate>Wed, 24 Nov 2021 20:57:19 &#43;0800</pubDate>

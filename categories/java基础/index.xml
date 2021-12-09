@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Java - Tag - fakeRichardWH的个人网站</title>
-        <link>http://localhost:1313/tags/java/</link>
-        <description>Java - Tag - fakeRichardWH的个人网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 24 Nov 2021 17:30:02 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/java/" rel="self" type="application/rss+xml" /><item>
+        <title>java基础 - Category - fakeRichardWH的个人网站</title>
+        <link>http://localhost:1313/categories/java%E5%9F%BA%E7%A1%80/</link>
+        <description>java基础 - Category - fakeRichardWH的个人网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 24 Nov 2021 17:30:02 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/java%E5%9F%BA%E7%A1%80/" rel="self" type="application/rss+xml" /><item>
     <title>java-Stack</title>
     <link>http://localhost:1313/post/stack/</link>
     <pubDate>Wed, 24 Nov 2021 17:30:02 &#43;0800</pubDate>

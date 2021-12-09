@@ -1,4 +1,4 @@
-# Stack
+# java-Stack
 
 为什么`Java`的集合类没有单独的`Stack`接口呢？因为有个遗留类名字就叫Stack，出于兼容性考虑，所以没办法创建`Stack`接口，只能用`Deque`接口来“模拟”一个`Stack`了
 ```java
