@@ -3,7 +3,14 @@
         <title>java - Category - fakeRichardWH的个人网站</title>
         <link>http://localhost:1313/categories/java/</link>
         <description>java - Category - fakeRichardWH的个人网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 24 Nov 2021 20:57:19 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/java/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 04 Dec 2021 16:42:48 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/java/" rel="self" type="application/rss+xml" /><item>
+    <title>leetcode-寻找入环节点</title>
+    <link>http://localhost:1313/post/findloopnodeinlinkelist/</link>
+    <pubDate>Sat, 04 Dec 2021 16:42:48 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/findloopnodeinlinkelist/</guid>
+    <description><![CDATA[题目描述：给定两个可能存在环或者不存在环的单链表head1和head2，找到两个链表的第一个相交节点。 总体思路： 我们希望有一个函数能调用后，]]></description>
+</item><item>
     <title>leetcode-Copy Linkedlist with Random pointer</title>
     <link>http://localhost:1313/post/copylistwithrand/</link>
     <pubDate>Wed, 24 Nov 2021 20:57:19 &#43;0800</pubDate>

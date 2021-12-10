@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/post\/copylistwithrand\/"
-        },"genre": "post","keywords": "LinkedList","wordcount":  1594 ,
+        },"genre": "post","keywords": "LinkedList","wordcount":  1600 ,
         "url": "http:\/\/localhost:1313\/post\/copylistwithrand\/","datePublished": "2021-11-24T20:57:19+08:00","dateModified": "2021-11-24T20:57:19+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -111,132 +111,21 @@
 val：一个表示 Node.val 的整数。
 random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如果不指向任何节点，则为  null 。你的代码<strong>只接受</strong>原链表的头节点<strong>head</strong>作为传入参数。</p>
 </blockquote>
-<blockquote>
-<p>来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/copy-list-with-random-pointer
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-</blockquote>
-<h1 id="思路1">思路1:</h1>
-<ol>
-<li>生成clone节点<code>copyNode</code>，用<code>HashMap</code>来存储<code>&lt;原始Node,拷贝Node&gt;</code>这样的键值对，存储起来</li>
-<li>再去设置<code>copyNode</code>的<code>random</code>和<code>next</code>指针。</li>
-<li>利用这个键值对的性质，每个<code>拷贝Node</code>的<code>random</code>指针需要指向的位置：就是<code>原始Node</code>的<code>random</code>指针指向那个<strong>Node的拷贝</strong>，而要找到这个值，就是利用<code>hashmap.get(Node.random)</code>
-比如：<code>1 -&gt; 2</code>,<code>1' -&gt; 2'</code> 由于<code>(1，1‘)</code>构成了键值对，<code>(2，2’)</code>也构成了键值对，所以<code>1‘</code>的random需要指向<code>2</code>的拷贝<code>2’</code></li>
-</ol>
-<h1 id="思路2">思路2:</h1>
-<ol>
-<li>对应每个原始链表的当前节点<code>Cur</code>生成<code>Copy</code>节点，将<code>Copy</code>节点放在原始链表的当前节点<code>Cur</code>的下一个位置<code>nxt</code></li>
-<li>再次遍历这个由<strong>新老节点</strong>构成的链表，设置<code>Copy</code>节点的<code>random</code>指针，它对应的<code>random</code>指向了<code>Cur</code>的<code>random</code>所指向的节点的下一个节点</li>
-<li>最后我们只需要将原始链表从新构成的链表分离出来就可以了，返回的答案也要是新的拷贝链表的头节点</li>
-</ol>
-<blockquote>
-<p>举个例子来说一个新构成的链表如下：
-1 -&gt; 1' -&gt; 2 -&gt; 2'</p>
-</blockquote>
-<p>假定原始链表中：<code>2</code>的<code>random</code>指向了<code>1</code>，那么在设置<code>2‘</code>的<code>random</code>时只需要将其指向1的<code>next</code>就可以了</p>
-<p>两种思路的代码实现：</p>
+<p>链表节点定义如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">  1
-</span><span class="lnt">  2
-</span><span class="lnt">  3
-</span><span class="lnt">  4
-</span><span class="lnt">  5
-</span><span class="lnt">  6
-</span><span class="lnt">  7
-</span><span class="lnt">  8
-</span><span class="lnt">  9
-</span><span class="lnt"> 10
-</span><span class="lnt"> 11
-</span><span class="lnt"> 12
-</span><span class="lnt"> 13
-</span><span class="lnt"> 14
-</span><span class="lnt"> 15
-</span><span class="lnt"> 16
-</span><span class="lnt"> 17
-</span><span class="lnt"> 18
-</span><span class="lnt"> 19
-</span><span class="lnt"> 20
-</span><span class="lnt"> 21
-</span><span class="lnt"> 22
-</span><span class="lnt"> 23
-</span><span class="lnt"> 24
-</span><span class="lnt"> 25
-</span><span class="lnt"> 26
-</span><span class="lnt"> 27
-</span><span class="lnt"> 28
-</span><span class="lnt"> 29
-</span><span class="lnt"> 30
-</span><span class="lnt"> 31
-</span><span class="lnt"> 32
-</span><span class="lnt"> 33
-</span><span class="lnt"> 34
-</span><span class="lnt"> 35
-</span><span class="lnt"> 36
-</span><span class="lnt"> 37
-</span><span class="lnt"> 38
-</span><span class="lnt"> 39
-</span><span class="lnt"> 40
-</span><span class="lnt"> 41
-</span><span class="lnt"> 42
-</span><span class="lnt"> 43
-</span><span class="lnt"> 44
-</span><span class="lnt"> 45
-</span><span class="lnt"> 46
-</span><span class="lnt"> 47
-</span><span class="lnt"> 48
-</span><span class="lnt"> 49
-</span><span class="lnt"> 50
-</span><span class="lnt"> 51
-</span><span class="lnt"> 52
-</span><span class="lnt"> 53
-</span><span class="lnt"> 54
-</span><span class="lnt"> 55
-</span><span class="lnt"> 56
-</span><span class="lnt"> 57
-</span><span class="lnt"> 58
-</span><span class="lnt"> 59
-</span><span class="lnt"> 60
-</span><span class="lnt"> 61
-</span><span class="lnt"> 62
-</span><span class="lnt"> 63
-</span><span class="lnt"> 64
-</span><span class="lnt"> 65
-</span><span class="lnt"> 66
-</span><span class="lnt"> 67
-</span><span class="lnt"> 68
-</span><span class="lnt"> 69
-</span><span class="lnt"> 70
-</span><span class="lnt"> 71
-</span><span class="lnt"> 72
-</span><span class="lnt"> 73
-</span><span class="lnt"> 74
-</span><span class="lnt"> 75
-</span><span class="lnt"> 76
-</span><span class="lnt"> 77
-</span><span class="lnt"> 78
-</span><span class="lnt"> 79
-</span><span class="lnt"> 80
-</span><span class="lnt"> 81
-</span><span class="lnt"> 82
-</span><span class="lnt"> 83
-</span><span class="lnt"> 84
-</span><span class="lnt"> 85
-</span><span class="lnt"> 86
-</span><span class="lnt"> 87
-</span><span class="lnt"> 88
-</span><span class="lnt"> 89
-</span><span class="lnt"> 90
-</span><span class="lnt"> 91
-</span><span class="lnt"> 92
-</span><span class="lnt"> 93
-</span><span class="lnt"> 94
-</span><span class="lnt"> 95
-</span><span class="lnt"> 96
-</span><span class="lnt"> 97
-</span><span class="lnt"> 98
-</span><span class="lnt"> 99
-</span><span class="lnt">100
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Definition for a Node.
@@ -251,8 +140,52 @@ random_index：随机指针指向的节点索引（范围从 0 到 n-1）；�
         <span class="k">this</span><span class="o">.</span><span class="na">random</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/copy-list-with-random-pointer
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h1 id="思路1">思路1:</h1>
+<ol>
+<li>生成clone节点<code>copyNode</code>，用<code>HashMap</code>来存储<code>&lt;原始Node,拷贝Node&gt;</code>这样的键值对，存储起来</li>
+<li>再去设置<code>copyNode</code>的<code>random</code>和<code>next</code>指针。</li>
+<li>利用这个键值对的性质，每个<code>拷贝Node</code>的<code>random</code>指针需要指向的位置：就是<code>原始Node</code>的<code>random</code>指针指向那个<strong>Node的拷贝</strong>，而要找到这个值，就是利用<code>hashmap.get(Node.random)</code>
+比如：<code>1 -&gt; 2</code>,<code>1' -&gt; 2'</code> 由于<code>(1，1‘)</code>构成了键值对，<code>(2，2’)</code>也构成了键值对，所以<code>1‘</code>的random需要指向<code>2</code>的拷贝<code>2’</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution1</span> <span class="o">{</span>
     <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">,</span> <span class="n">Node</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
     <span class="cm">/**
 </span><span class="cm">    ** 思路1
@@ -277,11 +210,92 @@ random_index：随机指针指向的节点索引（范围从 0 到 n-1）；�
         <span class="o">}</span>
         <span class="k">return</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">head</span><span class="o">);</span>
     <span class="o">}</span>
-    
-    <span class="c1">//更省内存的方法
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="思路2">思路2:</h1>
+<ol>
+<li>对应每个原始链表的当前节点<code>Cur</code>生成<code>Copy</code>节点，将<code>Copy</code>节点放在原始链表的当前节点<code>Cur</code>的下一个位置<code>nxt</code></li>
+<li>再次遍历这个由<strong>新老节点</strong>构成的链表，设置<code>Copy</code>节点的<code>random</code>指针，它对应的<code>random</code>指向了<code>Cur</code>的<code>random</code>所指向的节点的下一个节点</li>
+<li>最后我们只需要将原始链表从新构成的链表分离出来就可以了，返回的答案也要是新的拷贝链表的头节点</li>
+</ol>
+<blockquote>
+<p>举个例子来说一个新构成的链表如下：
+1 -&gt; 1' -&gt; 2 -&gt; 2'</p>
+</blockquote>
+<p>假定原始链表中：<code>2</code>的<code>random</code>指向了<code>1</code>，那么在设置<code>2‘</code>的<code>random</code>时只需要将其指向1的<code>next</code>就可以了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">    <span class="c1">//更省内存的方法
 </span><span class="c1"></span>    <span class="cm">/**
 </span><span class="cm">    ** 思路2
 </span><span class="cm">    */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution2</span> <span class="o">{</span> 
     <span class="kd">public</span> <span class="n">Node</span> <span class="nf">copyRandomList2</span><span class="o">(</span><span class="n">Node</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>

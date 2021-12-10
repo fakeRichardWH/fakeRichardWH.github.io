@@ -10,11 +10,13 @@
             <loc>http://localhost:1313/tags/</loc><lastmod>2021-12-07T19:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/tags/tv-loss/</loc><lastmod>2021-12-07T19:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/post/deeplearning-cnn-fundamentals1/</loc><lastmod>2021-12-07T19:41:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/post/recommendationsystem01/</loc><lastmod>2021-12-02T18:46:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/categories/java/</loc><lastmod>2021-11-24T20:57:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/categories/leetcode/</loc><lastmod>2021-11-24T20:57:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://localhost:1313/tags/double-pointer-method/</loc><lastmod>2021-12-04T16:42:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/categories/java/</loc><lastmod>2021-12-04T16:42:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/categories/leetcode/</loc><lastmod>2021-12-04T16:42:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/post/findloopnodeinlinkelist/</loc><lastmod>2021-12-04T16:42:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/linkedlist/</loc><lastmod>2021-12-04T16:42:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/post/recommendationsystem01/</loc><lastmod>2021-12-02T18:46:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>http://localhost:1313/post/copylistwithrand/</loc><lastmod>2021-11-24T20:57:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://localhost:1313/tags/linkedlist/</loc><lastmod>2021-11-24T20:57:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>http://localhost:1313/tags/java/</loc><lastmod>2021-11-24T17:30:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>http://localhost:1313/post/stack/</loc><lastmod>2021-11-24T17:30:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>http://localhost:1313/categories/java%E5%9F%BA%E7%A1%80/</loc><lastmod>2021-11-24T17:30:02&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>

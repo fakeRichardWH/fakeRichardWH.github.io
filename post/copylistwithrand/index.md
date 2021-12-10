@@ -9,25 +9,7 @@
 val：一个表示 Node.val 的整数。
 random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如果不指向任何节点，则为  null 。你的代码**只接受**原链表的头节点**head**作为传入参数。
 
->来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/copy-list-with-random-pointer
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-
-# 思路1:
- 1. 生成clone节点`copyNode`，用`HashMap`来存储`<原始Node,拷贝Node>`这样的键值对，存储起来
- 2. 再去设置`copyNode`的`random`和`next`指针。
- 3. 利用这个键值对的性质，每个`拷贝Node`的`random`指针需要指向的位置：就是`原始Node`的`random`指针指向那个**Node的拷贝**，而要找到这个值，就是利用`hashmap.get(Node.random)`
-   比如：`1 -> 2`,`1' -> 2'` 由于`(1，1‘)`构成了键值对，`(2，2’)`也构成了键值对，所以`1‘`的random需要指向`2`的拷贝`2’`
-# 思路2:
- 1. 对应每个原始链表的当前节点`Cur`生成`Copy`节点，将`Copy`节点放在原始链表的当前节点`Cur`的下一个位置`nxt`
- 2. 再次遍历这个由**新老节点**构成的链表，设置`Copy`节点的`random`指针，它对应的`random`指向了`Cur`的`random`所指向的节点的下一个节点
- 3. 最后我们只需要将原始链表从新构成的链表分离出来就可以了，返回的答案也要是新的拷贝链表的头节点
- >举个例子来说一个新构成的链表如下：
->1 -> 1' -> 2 -> 2'
->
-假定原始链表中：`2`的`random`指向了`1`，那么在设置`2‘`的`random`时只需要将其指向1的`next`就可以了
-
-两种思路的代码实现：
+链表节点定义如下：
 ```java
 // Definition for a Node.
 class Node {
@@ -41,8 +23,20 @@ class Node {
         this.random = null;
     }
 }
+```
 
-class Solution {
+>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/copy-list-with-random-pointer
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+# 思路1:
+ 1. 生成clone节点`copyNode`，用`HashMap`来存储`<原始Node,拷贝Node>`这样的键值对，存储起来
+ 2. 再去设置`copyNode`的`random`和`next`指针。
+ 3. 利用这个键值对的性质，每个`拷贝Node`的`random`指针需要指向的位置：就是`原始Node`的`random`指针指向那个**Node的拷贝**，而要找到这个值，就是利用`hashmap.get(Node.random)`
+   比如：`1 -> 2`,`1' -> 2'` 由于`(1，1‘)`构成了键值对，`(2，2’)`也构成了键值对，所以`1‘`的random需要指向`2`的拷贝`2’`
+
+```java
+public class Solution1 {
     HashMap<Node, Node> map = new HashMap<>();
     /**
     ** 思路1
@@ -67,11 +61,24 @@ class Solution {
         }
         return map.get(head);
     }
-    
+
+}
+```
+# 思路2:
+ 1. 对应每个原始链表的当前节点`Cur`生成`Copy`节点，将`Copy`节点放在原始链表的当前节点`Cur`的下一个位置`nxt`
+ 2. 再次遍历这个由**新老节点**构成的链表，设置`Copy`节点的`random`指针，它对应的`random`指向了`Cur`的`random`所指向的节点的下一个节点
+ 3. 最后我们只需要将原始链表从新构成的链表分离出来就可以了，返回的答案也要是新的拷贝链表的头节点
+ >举个例子来说一个新构成的链表如下：
+>1 -> 1' -> 2 -> 2'
+>
+假定原始链表中：`2`的`random`指向了`1`，那么在设置`2‘`的`random`时只需要将其指向1的`next`就可以了
+
+```java
     //更省内存的方法
     /**
     ** 思路2
     */
+public class Solution2 { 
     public Node copyRandomList2(Node head) {
         if (head == null) {
             return null;

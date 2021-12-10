@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>FindLoopNodeInLinkeList - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="FindLoopNodeInLinkeList" />
-<meta property="og:description" content="题目描述：找到两个链表的相交节点， loop1 == null， loop2 == null，但是二者相交" />
+        <title>leetcode-寻找入环节点 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="leetcode-寻找入环节点" />
+<meta property="og:description" content="题目描述：给定两个可能存在环或者不存在环的单链表head1和head2，找到两个链表的第一个相交节点。 总体思路： 我们希望有一个函数能调用后，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/findloopnodeinlinkelist/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-12-04T16:42:48+08:00" />
@@ -15,19 +15,19 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://localhost:1313/logo.png"/>
 
-<meta name="twitter:title" content="FindLoopNodeInLinkeList"/>
-<meta name="twitter:description" content="题目描述：找到两个链表的相交节点， loop1 == null， loop2 == null，但是二者相交"/>
+<meta name="twitter:title" content="leetcode-寻找入环节点"/>
+<meta name="twitter:description" content="题目描述：给定两个可能存在环或者不存在环的单链表head1和head2，找到两个链表的第一个相交节点。 总体思路： 我们希望有一个函数能调用后，"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/findloopnodeinlinkelist/" /><link rel="prev" href="http://localhost:1313/post/recommendationsystem01/" /><link rel="next" href="http://localhost:1313/post/deeplearning-cnnfundamentals1/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/findloopnodeinlinkelist/" /><link rel="prev" href="http://localhost:1313/post/recommendationsystem01/" /><link rel="next" href="http://localhost:1313/post/deeplearning-cnn-fundamentals1/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "FindLoopNodeInLinkeList",
+        "headline": "leetcode-寻找入环节点",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/post\/findloopnodeinlinkelist\/"
-        },"genre": "post","wordcount":  37 ,
+        },"genre": "post","keywords": "double pointer method, LinkedList","wordcount":  2260 ,
         "url": "http:\/\/localhost:1313\/post\/findloopnodeinlinkelist\/","datePublished": "2021-12-04T16:42:48+08:00","dateModified": "2021-12-04T16:42:48+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -99,9 +99,304 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">FindLoopNodeInLinkeList</h1><div class="content" id="content"><h1 id="题目描述找到两个链表的相交节点">题目描述：找到两个链表的相交节点，</h1>
-<h2 id="loop1--null-loop2--null但是二者相交">loop1 == null， loop2 == null，但是二者相交</h2>
-</div><div id="comments"></div></div></div>
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">leetcode-寻找入环节点</h1><div class="content" id="content"><blockquote>
+<p>题目描述：给定两个可能<strong>存在环或者不存在环</strong>的单链表head1和head2，找到两个链表的第一个相交节点。</p>
+</blockquote>
+<h1 id="总体思路">总体思路：</h1>
+<p>我们希望有一个函数能调用后，告知我们一个链表是否有环，如果有环还能返回<strong>第一个入环节点</strong>。从而我们通过这个函数<strong>findLoopNode</strong>找到入环节点，接下来就可以分情况讨论两个链表相交的情况。</p>
+<h2 id="1-两链表都无环">1. 两链表都无环</h2>
+<p>即<code>findLoopNode(head1) == findLoopNode(head2) = null</code>。</br>
+1.1 如果两个链表相交的话:他们一定从<strong>某个节点</strong>开始有公共的部分并且公共部分会一直延伸到<code>null</code>节点。</br>
+1.2 否则二者<strong>一定不相交</strong>，从而我们可以通过两者到链表结尾的<strong>前一个非<code>null</code>节点</strong>判断是否相同判断是否相交。
+若相交： 这时候让链表长度长的一方先走差值步数<code>(len(head1) - len(head2))</code></p>
+<p>然后让链表长度短的与链表长度长的<strong>再次同时出发</strong>，如果相遇就是第一个相交🍌的节点</p>
+<h2 id="2-两链表中一个有环一个无环">2. 两链表中一个有环，一个无环</h2>
+<p>即<code>findLoopNode(head1) == null || findLoopNode(head2) == null</code></br>
+2.1
+这种情况下，无论如何两个链表一定不相交，读者可以在草稿纸上画着试一试，因为题目给定的是单链表，如果相交的话，就说明另一个链表也有环，从而和我们的假设相矛盾。</p>
+<h2 id="3-两链表都有环">3. 两链表都有环</h2>
+<p>即<code>findLoopNode(head1) != null &amp;&amp; findLoopNode(head2) != null</code>
+此时分为两种情况：</br></p>
+<h3 id="相交">相交</h3>
+<h4 id="y字形开始相交后进入同一个环-br">Y字形开始相交后进入同一个环 </br></h4>
+<p>例子🌰：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1-&gt;2-&gt;4-&gt;5-&gt;7-&gt;8-&gt;9
+         ^     ^  | 
+ 6-&gt;3____|     |__|
+</code></pre></td></tr></table>
+</div>
+</div><p>这种比较简单，只需要判断入环节点是否相等，如果相等，那么一定在某个位置开始有入环，比如🌰例子中的<code>5</code>节点，那么此时只需要类似将入环节点<strong>视为结尾点</strong>（或者当作<code>null</code>），按照两个<strong>无环链表相交</strong>的情况来寻找他们的相交点即可。</p>
+<h4 id="两链表相交后进入同一个环">两链表相交后进入同一个环</h4>
+<p>例子🌰：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1-&gt;2-&gt;4-&gt;5-&gt;7-&gt;8-&gt;9&lt;-3&lt;-6
+            ^     | 
+            |_____|
+</code></pre></td></tr></table>
+</div>
+</div><p>由于题目说要返回第一个相交节点，可以认为两个链表的其中一个入环节点就是相交节点，将其返回即可，此时要与不相交的情况分开就只有用</p>
+<h3 id="不相交">不相交</h3>
+<p>例子🌰：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1-&gt;2-&gt;4-&gt;5-&gt;7-&gt;8-&gt;9
+            ^     | 
+            |_____|
+
+3-&gt;0-&gt;6
+   ^  | 
+   |__|
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="主逻辑实现">主逻辑实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">Node</span> <span class="nf">findIntersectNode</span><span class="o">(</span><span class="n">Node</span> <span class="n">head1</span><span class="o">,</span> <span class="n">Node</span> <span class="n">head2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">head1</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">head2</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Node</span> <span class="n">res1</span> <span class="o">=</span> <span class="n">findLoopNode</span><span class="o">(</span><span class="n">head1</span><span class="o">);</span> 
+    <span class="n">Node</span> <span class="n">res2</span> <span class="o">=</span> <span class="n">findLoopNode</span><span class="o">(</span><span class="n">head2</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">res1</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">res2</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//两链表都无环
+</span><span class="c1"></span>        <span class="k">return</span> <span class="n">intersectPointYStyle</span><span class="o">(</span><span class="n">head1</span><span class="o">,</span> <span class="n">head2</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">res1</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">res2</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//其中一个链表有环，另一个无环
+</span><span class="c1"></span>        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">res1</span> <span class="o">==</span> <span class="n">res2</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">intersectPointYStyle</span><span class="o">(</span><span class="n">head1</span><span class="o">,</span> <span class="n">head2</span><span class="o">,</span> <span class="n">res1</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span><span class="c1">//剩下两个情况 1:都有环不相交 2:都有环但是是非Y型相交
+</span><span class="c1"></span>            <span class="n">res1</span> <span class="o">=</span> <span class="n">res1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">res1</span> <span class="o">!=</span> <span class="n">res1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">//让res1在环上绕圈 如果碰到 res2
+</span><span class="c1"></span>                <span class="c1">//说明两者相交
+</span><span class="c1"></span>                <span class="k">if</span> <span class="o">(</span><span class="n">res1</span> <span class="o">==</span> <span class="n">res2</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="n">res1</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="n">res1</span> <span class="o">=</span> <span class="n">res1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="c1">//绕圈中始终没碰到 res2
+</span><span class="c1"></span>            <span class="c1">//说明二者不相交
+</span><span class="c1"></span>            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="c1">//这个函数是找Y型相交链表的第一个相交点
+</span><span class="c1"></span><span class="kd">public</span> <span class="n">Node</span> <span class="nf">intersectPointYStyle</span><span class="o">(</span><span class="n">Node</span> <span class="n">head1</span><span class="o">,</span> <span class="n">Node</span> <span class="n">head2</span><span class="o">,</span> <span class="n">Node</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Node</span> <span class="n">cur1</span> <span class="o">=</span> <span class="n">head1</span><span class="o">;</span>
+    <span class="n">Node</span> <span class="n">cur2</span> <span class="o">=</span> <span class="n">head2</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span><span class="c1">//记录两链表的差值
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">cur1</span> <span class="o">!=</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">n</span><span class="o">++;</span>
+        <span class="n">cur1</span> <span class="o">=</span> <span class="n">cur1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">cur2</span> <span class="o">!=</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">n</span><span class="o">--;</span>
+        <span class="n">cur2</span> <span class="o">=</span> <span class="n">cur2</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">//找到先出发的节点
+</span><span class="c1"></span>    <span class="n">Node</span> <span class="n">first</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">0</span> <span class="o">?</span> <span class="n">head1</span> <span class="o">:</span> <span class="n">head2</span><span class="o">;</span>
+    <span class="n">Node</span> <span class="n">second</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">0</span> <span class="o">?</span> <span class="n">head2</span> <span class="o">:</span> <span class="n">head1</span><span class="o">;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+
+    <span class="c1">//让长链表先走差值步
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">n</span><span class="o">--;</span>
+    <span class="o">}</span>
+    <span class="c1">//让两个链表同时走
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">first</span> <span class="o">!=</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">second</span> <span class="o">=</span> <span class="n">second</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">first</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="findloopnode实现">findLoopNode()实现：</h3>
+<p>如果一个单链表有环的话，那么从头节点出发，一定会在某个时刻走到原来的位置，反之就一定会走到null的位置。<br>
+因而可以使用快慢指针，如果<code>slow</code>或者<code>fast</code>指针走到了<code>null</code>节点，那么该链表一定不存在环。反之就会出现<code>slow==fast</code>的情况。</p>
+<h4 id="入环节点判断">入环节点判断</h4>
+<p>设两指针<code>fast</code>，<code>slow </code>指向链表头部 <code>head</code>，<code>fast</code>每轮走2步，<code>slow</code>每轮走1步；当<code>fast == slow</code>时，两指针在环中第一次相遇。<br>
+<strong>下面分析此时<code>fast</code> 与<code>slow</code>走过的步数关系：</strong>
+<br></p>
+<blockquote>
+<p>设链表共有$a+b$个节点，其中链表头部到链表入口有$a$个节点（不计链表入口节点），链表环有b个节点。
+这里需要注意: $a$和$b$是未知数，例如下面例子中链表 $a=4$, $b=2$。</p>
+</blockquote>
+<p>例子:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1-&gt;2-&gt;4-&gt;5-&gt;7-&gt;8-&gt;9
+            ^     | 
+            |_____|
+</code></pre></td></tr></table>
+</div>
+</div><ol start="0">
+<li>
+<p>相遇时: 设两指针分别走了 f ，s 步，则有：<code>fast</code>走的步数是<code>slow</code>步数的$2$倍，即 $f = 2s$</p>
+</li>
+<li>
+<p>相遇时:<code>fast</code>比<code>slow</code>多走了$n$个环的长度，即:$f = s + nb$;（解析: 双指针都走过 a步，然后在环内绕圈直到重合，重合时<code>fast</code>比 <code>slow</code>多走了环的长度整数倍；</p>
+</li>
+<li>
+<p>以上两式相减得: $f = 2nb$,$s = nb$，即<code>fast</code>和<code>slow</code>指针分别走了 $2n$，$n$个环的周长（注意：$n$是未知数，不同链表的情况不同）。</p>
+</li>
+</ol>
+<h5 id="目前情况分析">目前情况分析：</h5>
+<p>如果让指针从链表头部一直向前走并统计步数$k$ ，那么所有走到链表入口节点时的步数是：$k = a + nb$ (即：先走$a$步到入口节点，之后每绕$1$圈环(走$b$步) 都会再次到入口节点)<br>
+而目前<code>slow</code>指针走过的步数为$nb$步。因此，我们只要想办法让 <code>slow </code>再走 $a$步停下来，就可以到环的入口。<br>
+但是我们不知道$a$的值，该怎么办？依然是使用双指针法。我们<strong>构建一个指针</strong>，此指针需要有以下性质：此指针和<code>slow </code>一起向前走$a$步后，两者在入口节点重合。
+那么从哪里走到入口节点需要$a$步？答案是链表头部head。<br>
+<br></p>
+<h5 id="双指针第二次相遇">双指针第二次相遇:</h5>
+<p><code>slow</code>指针位置不变 ，将<code> fast</code> 指针重新指向链表头部节点;<code>slow</code>和<code> fast</code> 同时每轮向前走1步；</p>
+<p>TIPS：此时 $f = 0$，$s = nb$；</p>
+<p>当<code> fast</code> 指针走到$f = a$步时,<code>slow</code>指针走到步$s = a+nb$，此时两指针重合，并同时指向链表环入口。
+第二次相遇后，返回<code>slow</code>指针指向的节点即可。</p>
+<h3 id="实现使用快慢指针">实现：（使用快慢指针）</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">findLoopNode</span><span class="o">(</span><span class="n">Node</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//由于我们希望快指针一开始就运动到比slow的下个位置
+</span><span class="c1"></span>        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Node</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="n">Node</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">slow</span> <span class="o">!=</span> <span class="n">fast</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">fast</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span><span class="c1">//一旦快指针走到终点，说明无环
+</span><span class="c1"></span>            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">//相遇了,将fast指向slow
+</span><span class="c1"></span>    <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="n">slow</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">slow</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div id="comments"></div></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">RichardWWHH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>

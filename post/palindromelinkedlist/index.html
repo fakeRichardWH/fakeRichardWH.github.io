@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/post\/palindromelinkedlist\/"
-        },"genre": "post","keywords": "LinkedList","wordcount":  90 ,
+        },"genre": "post","keywords": "LinkedList","wordcount":  418 ,
         "url": "http:\/\/localhost:1313\/post\/palindromelinkedlist\/","datePublished": "2021-11-24T17:17:26+08:00","dateModified": "2021-11-24T17:17:26+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -126,9 +126,98 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="思路一">思路一:</h2>
-<p>利用一个stack来实现
-Time Complexity: $\mathcal{O}(n)$
+<h3 id="利用一个stack来实现">利用一个stack来实现</h3>
+<blockquote>
+<p>Time Complexity: $\mathcal{O}(n)$
 Space Complexity: $\mathcal{O}(n)$</p>
+</blockquote>
+<p>将链表以中点部分为界的后半部分逐个压栈，如果遇到中点就停止入栈。
+然后从中点位置开始依次弹出栈元素，同时重头开始遍历链表,将链表中的元素与栈元素比较，如果不相同返回<code>false</code>否则返回<code>true</code>
+<strong>注意奇/偶长度的链表情况下</strong>：slow指针停下的位置，以及stack是否应该添加当前位置的值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">ifPalindrome</span> <span class="o">(</span><span class="n">Node</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+    <span class="c1">//先找到中点
+</span><span class="c1"></span>    <span class="n">Node</span> <span class="n">midPoint</span> <span class="o">=</span> <span class="n">findMid</span><span class="o">(</span><span class="n">head</span><span class="o">);</span>
+    <span class="n">Node</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="n">midPoint</span><span class="o">.</span><span class="na">next</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">val</span><span class="o">);</span>
+      <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">//奇偶条件下 slow指针的位置
+</span><span class="c1">// 1-&gt;2-&gt;2-&gt;1-&gt;null
+</span><span class="c1">// s  s    
+</span><span class="c1">// f     f
+</span><span class="c1">// 1-&gt;2-&gt;1-&gt;null
+</span><span class="c1">// s  s
+</span><span class="c1">// f     f
+</span><span class="c1"></span><span class="kd">private</span> <span class="n">Node</span> <span class="nf">findMid</span><span class="o">(</span><span class="n">Node</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Node</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="n">Node</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="c1">//注意这里是且的逻辑 否则会出现NPE
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">fast</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="k">return</span> <span class="n">slow</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="思路二">思路二:</h2>
+<h3 id="heading"></h3>
+<blockquote>
+<p>Time Complexity: $\mathcal{O}(n)$
+Space Complexity: $\mathcal{O}(1)$</p>
+</blockquote>
 </div><div id="comments"></div></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
