@@ -6,7 +6,16 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Dec 2021 19:41:09 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Dec 2021 14:41:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pytorch中view方法的坑</title>
+      <link>http://localhost:1313/post/numpytensortraps/</link>
+      <pubDate>Sat, 11 Dec 2021 14:41:12 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/numpytensortraps/</guid>
+      <description>pytorch View视图 你咋就这么特别呢？ 查看Pytorch官方文档: PyTorch allows a tensor to be a View(视图) of an existing tensor.View(视图) tensor shares the same underlying data with</description>
+    </item>
+    
     <item>
       <title>深度学习-CNN相关01</title>
       <link>http://localhost:1313/post/deeplearning-cnn-fundamentals1/</link>

@@ -17,7 +17,7 @@
 ## 思路一:
 ### 利用一个stack来实现
 >Time Complexity: $\mathcal{O}(n)$
-Space Complexity: $\mathcal{O}(n)$
+>Space Complexity: $\mathcal{O}(n)$
 
 将链表以中点部分为界的后半部分逐个压栈，如果遇到中点就停止入栈。
 然后从中点位置开始依次弹出栈元素，同时重头开始遍历链表,将链表中的元素与栈元素比较，如果不相同返回`false`否则返回`true`
@@ -63,6 +63,6 @@ private Node findMid(Node head) {
 ## 思路二:
 ### 
 >Time Complexity: $\mathcal{O}(n)$
-Space Complexity: $\mathcal{O}(1)$
+>Space Complexity: $\mathcal{O}(1)$
 
 
