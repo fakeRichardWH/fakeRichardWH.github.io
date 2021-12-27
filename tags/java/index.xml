@@ -3,7 +3,14 @@
         <title>Java - Tag - fakeRichardWH的个人网站</title>
         <link>http://localhost:1313/tags/java/</link>
         <description>Java - Tag - fakeRichardWH的个人网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 24 Nov 2021 17:30:02 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/java/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 21 Dec 2021 21:31:27 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>BinarySearch</title>
+    <link>http://localhost:1313/post/binarysearch/</link>
+    <pubDate>Tue, 21 Dec 2021 21:31:27 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/binarysearch/</guid>
+    <description><![CDATA[二分查找绕口令 管他左侧还右侧，搜索区间定乾坤 搜索一个元素时，搜索区间两端闭 while条件带等号，否则需要打补丁 if相等就返回，其他的事甭操心]]></description>
+</item><item>
     <title>java-Stack</title>
     <link>http://localhost:1313/post/stack/</link>
     <pubDate>Wed, 24 Nov 2021 17:30:02 &#43;0800</pubDate>

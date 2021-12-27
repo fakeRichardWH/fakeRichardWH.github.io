@@ -64,6 +64,7 @@ private Node findMid(Node head) {
 ### 
 >Time Complexity: $\mathcal{O}(n)$
 >Space Complexity: $\mathcal{O}(1)$
+
 用快慢指针法找到链表的中点，然后将链表的后半段进行反转，然后cur1从头节点开始遍历，cur2从中点开始遍历，如果cur1指针所指向的值不等于cur2指针的值，那么就返回false，否则返回true，最好在返回时还能够将原链表复原
 ```java
 public Node ifPalindromeList(Node head) {
