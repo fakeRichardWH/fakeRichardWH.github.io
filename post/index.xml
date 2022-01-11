@@ -13,7 +13,7 @@
       <pubDate>Tue, 11 Jan 2022 12:21:12 +0800</pubDate>
       
       <guid>http://localhost:1313/post/leetcodeday01/</guid>
-      <description></description>
+      <description>两数之和 思路1: 思路一: 对于nums数组中每个位置i上的x，要找到target-x,可以使用两层遍历，第一层遍历是遍历数组中的每个数字，第二</description>
     </item>
     
     <item>
