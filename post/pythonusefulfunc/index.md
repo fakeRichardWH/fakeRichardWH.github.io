@@ -80,5 +80,3 @@ print([x for x in sqr])
 # result: [0, 1, 4, 9, 16, 25, 36, 49, 64]
 # 对[0,9]逐元素平方
 ```
-4. reduce函数
-![reduceProcess.png](/images/postImgs/reduceProcess.png)
