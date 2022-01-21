@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>LeetcodeDay02 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="LeetcodeDay02" />
+<meta property="og:description" content="题目 前提条件： 两个有序数组均为正序列，且两个数组有且仅有一个会是空数组 nums1.length = m,nums1.length = n 如果m&#43;n == 2k,那么中位数为第k和k&#43;1位置的数据的之和的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/leetcodeday02/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-12T14:55:48+08:00" />
+<meta property="article:modified_time" content="2022-01-12T14:55:48+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+
+<meta name="twitter:title" content="LeetcodeDay02"/>
+<meta name="twitter:description" content="题目 前提条件： 两个有序数组均为正序列，且两个数组有且仅有一个会是空数组 nums1.length = m,nums1.length = n 如果m&#43;n == 2k,那么中位数为第k和k&#43;1位置的数据的之和的"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/leetcodeday02/" /><link rel="prev" href="http://localhost:1313/post/leetcodeday01/" /><link rel="next" href="http://localhost:1313/post/pythonusefulfunc/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "LeetcodeDay02",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/post\/leetcodeday02\/"
+        },"genre": "post","wordcount":  1629 ,
+        "url": "http:\/\/localhost:1313\/post\/leetcodeday02\/","datePublished": "2022-01-12T14:55:48+08:00","dateModified": "2022-01-12T14:55:48+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "RichardWWHH"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="fakeRichardWH的个人网站"></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/post/"> 文章/articles </a><a class="menu-item" href="/tags/"> 标签/tags </a><a class="menu-item" href="/categories/"> 分类/categories </a><a class="menu-item" href="/about/"> 关于我/about me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="fakeRichardWH的个人网站"></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/post/" title="">文章/articles</a><a class="menu-item" href="/tags/" title="">标签/tags</a><a class="menu-item" href="/categories/" title="">分类/categories</a><a class="menu-item" href="/about/" title="">关于我/about me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">LeetcodeDay02</h1><div class="content" id="content"><h1 id="题目">题目</h1>
+<ul>
+<li>前提条件： 两个有序数组均为正序列，且两个数组有且仅有一个会是空数组</li>
+<li><code>nums1.length = m</code>,<code>nums1.length = n</code>
+<ul>
+<li>如果<code>m+n == 2k</code>,那么中位数为第<code>k</code>和<code>k+1</code>位置的数据的之和的一半 也就是$\frac{m + n}{2}$ 和$\frac{m + n}{2} + 1$</li>
+<li>如果<code>m+n == 2k+1</code>,那么中位数为<code>k+1</code>位置的数据
+$\frac{m + n}{2} + 1$</li>
+</ul>
+</li>
+</ul>
+<h1 id="分析">分析</h1>
+<p>给定两个有序数组，要求找到两个有序数组的中位数，最直观的思路有以下两种：</p>
+<ul>
+<li>注意： 当两个数组长度之和为偶数时，其中位数为总长度<code>n</code>的$\frac{n - 2}{2}$位置上和$\frac{n}{2}$位置上的取值之和的一半</li>
+<li>当两个数组长度之和为偶数时，其中位数为总长度<code>n</code>的$\frac{n}{2}$位置上的数值</li>
+</ul>
+<h1 id="思路1">思路1:</h1>
+<p>使用归并的方式，合并两个有序数组，得到一个大的有序数组。大的有序数组的中间位置的元素，即为中位数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">double</span> <span class="nf">findMedianSortedArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums1</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">nums2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">nums1</span><span class="o">.</span><span class="na">length</span> <span class="o">+</span> <span class="n">nums2</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">nums1</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums2</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="c1">//special case
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">2</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span><span class="c1">//长度为偶数
+</span><span class="c1"></span>            <span class="k">return</span> <span class="o">(</span><span class="n">nums2</span><span class="o">[</span><span class="n">n</span> <span class="o">/</span> <span class="n">2</span> <span class="o">-</span> <span class="n">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">nums2</span><span class="o">[</span><span class="n">n</span> <span class="o">/</span> <span class="n">2</span><span class="o">])</span> <span class="o">/</span><span class="n">2</span><span class="o">.</span><span class="na">0</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">(</span><span class="kt">double</span><span class="o">)</span> <span class="n">nums2</span><span class="o">[</span><span class="n">n</span> <span class="o">/</span> <span class="n">2</span><span class="o">];</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">%</span> <span class="n">2</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span><span class="c1">//长度为偶数
+</span><span class="c1"></span>            <span class="k">return</span> <span class="o">(</span><span class="n">nums2</span><span class="o">[</span><span class="n">m</span> <span class="o">/</span> <span class="n">2</span> <span class="o">-</span> <span class="n">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">nums2</span><span class="o">[</span><span class="n">m</span> <span class="o">/</span> <span class="n">2</span><span class="o">])</span> <span class="o">/</span><span class="n">2</span><span class="o">.</span><span class="na">0</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">(</span><span class="kt">double</span><span class="o">)</span> <span class="n">nums2</span><span class="o">[</span><span class="n">m</span> <span class="o">/</span> <span class="n">2</span><span class="o">];</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">//合并两个有序数组
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">count</span> <span class="o">!=</span> <span class="o">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="o">))</span> <span class="o">{</span><span class="c1">//这个逻辑不是唯一的
+</span><span class="c1"></span>    <span class="c1">//可以改写
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span><span class="c1">//nums1 的指针已经到了边界
+</span><span class="c1"></span>            <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">!=</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">count</span><span class="o">++]</span> <span class="o">=</span> <span class="n">nums2</span><span class="o">[</span><span class="n">j</span><span class="o">++];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span><span class="c1">//nums2 的指针已经到了边界
+</span><span class="c1"></span>            <span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">count</span><span class="o">++]</span> <span class="o">=</span> <span class="n">nums2</span><span class="o">[</span><span class="n">i</span><span class="o">++];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">nums1</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;=</span> <span class="n">nums2</span><span class="o">[</span><span class="n">j</span><span class="o">])</span> <span class="o">{</span>
+            <span class="n">nums</span><span class="o">[</span><span class="n">count</span><span class="o">++]</span> <span class="o">=</span> <span class="n">nums1</span><span class="o">[</span><span class="n">i</span><span class="o">++];</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">nums</span><span class="o">[</span><span class="n">count</span><span class="o">++]</span> <span class="o">=</span> <span class="n">nums1</span><span class="o">[</span><span class="n">j</span><span class="o">++];</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">//返回合并后数组中位数
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">count</span> <span class="o">%</span> <span class="n">2</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span><span class="c1">//长度为偶数
+</span><span class="c1"></span>            <span class="k">return</span> <span class="o">(</span><span class="n">nums2</span><span class="o">[</span><span class="n">count</span> <span class="o">/</span> <span class="n">2</span> <span class="o">-</span> <span class="n">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">nums2</span><span class="o">[</span><span class="n">count</span> <span class="o">/</span> <span class="n">2</span><span class="o">])</span> <span class="o">/</span><span class="n">2</span><span class="o">.</span><span class="na">0</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">(</span><span class="kt">double</span><span class="o">)</span> <span class="n">nums2</span><span class="o">[</span><span class="n">count</span> <span class="o">/</span> <span class="n">2</span><span class="o">];</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="思路2">思路2:</h1>
+<p>我们不需要将两个数组真的合并，我们只需要找到中位数在哪里就可以了。</p>
+<p>开始的思路是写一个循环，然后里边判断是否到了中位数的位置，到了就返回结果，但这里对偶数和奇数的分类会很麻烦。当其中一个数组遍历完后，出了<code>for</code>循环<strong>对边界的判断也会分几种情况</strong>。总体来说，虽然复杂度不影响，但代码会看起来很乱。</p>
+<p>首先是怎么将奇数和偶数的情况合并一下。</p>
+<p>用 <code>len</code> 表示合并后数组的长度:</p>
+<ol>
+<li>如果是奇数，我们需要知道第 <code>(len+1）/2</code> 个数就可以了，如果遍历的话需要遍历 <code>(int) (len/2) + 1</code> 次。比如<code>len</code>长度为5,那么我们要拿到第三个数，需要遍历三次</li>
+<li>如果是偶数，我们需要知道第 <code>len/2</code>和 <code>len/2+1</code> 个数，也是需要遍历 <code>len/2+1</code> 次。所以遍历的话，奇数和偶数都是 <code>len/2+1</code> 次。比如<code>len</code>长度为6,那么我们要拿到第三个和第四个数,可以遍历四次然后减1,拿到左边的数字</li>
+</ol>
+<p>返回中位数的话，奇数需要最后一次遍历的结果就可以了，<strong>偶数需要最后一次和上一次遍历的结果</strong>。所以我们用两个变量<code>pre</code>和<code>cur</code>，<code>cur</code>保存当前循环的结果，在每次循环前将<code>cur</code>的值赋给<code>pre</code>。这样在进行最后一次循环的时候,<code>pre</code>将得到 <code>cur</code>的值，也就是上一次循环的结果，接下来<code>cur</code>更新为最后一次的结果。</p>
+<p>循环中该怎么写，什么时候<code>nums1</code>数组后移，什么时候<code>nums2</code>数组后移。用<code>p1</code>和<code>p2</code>分别表示当前指向<code>nums1</code>数组和<code>nums2</code>数组的位置。如果<code>p1</code>还没有到最后并且此时<code>nums1</code>位置的数字小于<code>nums2</code>位置的数组，那么就可以后移了。也就是<code>p1 ＜ m &amp;&amp; nums1[p1]&lt; nums2[p2]</code>。</p>
+<p>但如果<code>nums2</code>数组此刻已经没有数字了，继续取数字<code>nums2[p2]</code>，则会越界，所以判断下<code>p2</code>是否大于数组长度了，这样 || 后边的就不会执行了，也就不会导致错误了，所以增加为 <code>p1 ＜ m &amp;&amp; (p2 &gt;= n || nums1[p1] &lt; nums2[p2])</code> 。其中<code>p2 &gt;= n</code>的优先级更高，因为即便这个条件为假也不妨碍后面的为真时的结果，但是这个如果为真，那就一定要移动<code>p1</code>指针了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">double</span> <span class="nf">findMedianSortedArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums1</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">nums2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">len1</span> <span class="o">=</span> <span class="n">nums1</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">len2</span> <span class="o">=</span> <span class="n">nums2</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">len1</span> <span class="o">+</span> <span class="n">len2</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span><span class="c1">//设置两个数组指针
+</span><span class="c1"></span>    <span class="c1">//设置记录值的容器
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">cur</span> <span class="o">=</span> <span class="o">-</span><span class="n">1</span><span class="o">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span><span class="c1">//cur记录中位数
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span><span class="c1">//循环 (len / 2) + 1 次
+</span><span class="c1"></span>        <span class="n">pre</span> <span class="o">=</span> <span class="n">cur</span><span class="o">;</span> <span class="c1">//每次遍历前 将上一轮的值赋给 pre
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">len1</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">p2</span> <span class="o">&gt;=</span> <span class="n">len2</span> <span class="o">||</span> <span class="n">nums1</span><span class="o">[</span><span class="n">p1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">nums2</span><span class="o">[</span><span class="n">p2</span><span class="o">]))</span> <span class="o">{</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">nums1</span><span class="o">[</span><span class="n">p1</span><span class="o">++];</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">nums2</span><span class="o">[</span><span class="n">p2</span><span class="o">++];</span> 
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">//退出循环时 判断一下数组总长度 
+</span><span class="c1"></span>    <span class="c1">// 如果是偶数
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">((</span><span class="n">len</span> <span class="o">&amp;</span> <span class="n">1</span><span class="o">)</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span><span class="c1">//相当于进行了取余运算
+</span><span class="c1"></span>        <span class="k">return</span> <span class="o">(</span><span class="n">pre</span> <span class="o">+</span> <span class="n">cur</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">.</span><span class="na">0</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="o">(</span><span class="kt">double</span><span class="o">)</span> <span class="n">cur</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div id="comments"></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">RichardWWHH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -6,7 +6,25 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jan 2022 12:21:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jan 2022 16:44:22 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lambda函数使用</title>
+      <link>http://localhost:1313/post/pythonusefulfunc/</link>
+      <pubDate>Fri, 21 Jan 2022 16:44:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pythonusefulfunc/</guid>
+      <description>匿名函数 以lambda 作为关键字,可以在一行内完成定义和声明，这个匿名函数由于没有实际的名称，所以一般在Python中没有什么复杂的功能。 语</description>
+    </item>
+    
+    <item>
+      <title>LeetcodeDay02</title>
+      <link>http://localhost:1313/post/leetcodeday02/</link>
+      <pubDate>Wed, 12 Jan 2022 14:55:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/leetcodeday02/</guid>
+      <description>题目 前提条件： 两个有序数组均为正序列，且两个数组有且仅有一个会是空数组 nums1.length = m,nums1.length = n 如果m+n == 2k,那么中位数为第k和k+1位置的数据的之和的</description>
+    </item>
+    
     <item>
       <title>LeetcodeDay01</title>
       <link>http://localhost:1313/post/leetcodeday01/</link>
@@ -32,15 +50,6 @@
       
       <guid>http://localhost:1313/post/binarysearch/</guid>
       <description>二分查找绕口令 管他左侧还右侧，搜索区间定乾坤 搜索一个元素时，搜索区间两端闭 while条件带等号，否则需要打补丁 if相等就返回，其他的事甭操心</description>
-    </item>
-    
-    <item>
-      <title>RemoveDuplicatesInArray</title>
-      <link>http://localhost:1313/post/removeduplicatesinarray/</link>
-      <pubDate>Thu, 16 Dec 2021 20:41:07 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/removeduplicatesinarray/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -122,6 +131,15 @@
       
       <guid>http://localhost:1313/post/hugocreatesite/</guid>
       <description>GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的用户名.github.io比如sophshep.github.io 详</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/post/ml01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/ml01/</guid>
+      <description>朴素贝叶斯 解决的是多分类问题 边缘概率 $P(X) = \sum_{Y}P(X,Y)$ 从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定每个Y，对联合概率求和，从而消</description>
     </item>
     
   </channel>

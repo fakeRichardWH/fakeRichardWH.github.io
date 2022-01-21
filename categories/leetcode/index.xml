@@ -3,7 +3,21 @@
         <title>leetcode - Category - fakeRichardWH的个人网站</title>
         <link>http://localhost:1313/categories/leetcode/</link>
         <description>leetcode - Category - fakeRichardWH的个人网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 04 Dec 2021 16:42:48 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/leetcode/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 12 Jan 2022 14:55:48 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/leetcode/" rel="self" type="application/rss+xml" /><item>
+    <title>LeetcodeDay02</title>
+    <link>http://localhost:1313/post/leetcodeday02/</link>
+    <pubDate>Wed, 12 Jan 2022 14:55:48 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/leetcodeday02/</guid>
+    <description><![CDATA[题目 前提条件： 两个有序数组均为正序列，且两个数组有且仅有一个会是空数组 nums1.length = m,nums1.length = n 如果m+n == 2k,那么中位数为第k和k+1位置的数据的之和的]]></description>
+</item><item>
+    <title>LeetcodeDay01</title>
+    <link>http://localhost:1313/post/leetcodeday01/</link>
+    <pubDate>Tue, 11 Jan 2022 12:21:12 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/leetcodeday01/</guid>
+    <description><![CDATA[两数之和 思路1: 思路一: 对于nums数组中每个位置i上的x，要找到target-x,可以使用两层遍历，第一层遍历是遍历数组中的每个数字，第二]]></description>
+</item><item>
     <title>leetcode-寻找入环节点</title>
     <link>http://localhost:1313/post/findloopnodeinlinkelist/</link>
     <pubDate>Sat, 04 Dec 2021 16:42:48 &#43;0800</pubDate>

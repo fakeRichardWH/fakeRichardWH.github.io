@@ -119,7 +119,9 @@ PS：这里先要说一个搜索左右边界和上面这个算法的一个区别
 因为对于搜索左右侧边界的二分查找，这种写法比较普遍，我就拿这种写法举例了，保证你以后遇到这类代码可以理解。你非要用两端都闭的写法反而更简单，我会在后面写相关的代码，把三种二分搜索都用一种两端都闭的写法统一起来，你耐心往后看就行了。
 
 2. 为什么没有返回`-1`的操作？如果`nums`中不存在`target`这个值，怎么办？
-![alt binarySearch](../images/postImgs/findLeftBoundary.png)
+
+![alt binarySearch](/images/postImgs/findLeftBoundary.png)
+
 对于这个数组，算法会返回`1`,而这个`1`可以解读为`nums`中中小于`2`的元素有`1`个。
 
 比如对于有序数组`nums = [2,3,5,7], target = 1`，算法会返回`0`，含义是：`nums`中小于`1`的元素有`0`个。
@@ -137,7 +139,7 @@ if (nums[left] < target) {
 */
 return nums[left] == target ? left : -1;
 ```
-3. 为什么`left = mid + 1，right = mid`？和之前的算法不一样？
+1. 为什么`left = mid + 1，right = mid`？和之前的算法不一样？
 
 答：这个很好解释，因为我们的「搜索区间」是`[left, right)`左闭右开，所以当`nums[mid]`被检测之后。
 下一步的搜索区间应该去掉 `mid` 分割成两个区间，即 `[left, mid)` 或 `[mid + 1, right)`。
@@ -182,7 +184,8 @@ if (nums[mid] < target) {
 
 ```
 由于 `while` 的退出条件是 `left == right + 1`，所以当 `target` 比 `nums` 中所有元素都大时，会存在以下情况使得索引越界：
-![img](../public/images/../../images/postImgs/outOfBound.png)
+![img](/images/postImgs/outOfBound.png)
+
 因此，最后返回结果时，代码需要检查**越界情况**：
 ```java
 if (left >= nums.length || nums[left] != target) {
@@ -253,7 +256,8 @@ if (nums[mid] == target) {
             left = mid + 1; // 注意这里
 ```
 这之后，`left`被更新为`left = mid + 1`，就是说` while `循环结束时，`nums[left]` 一定不等于 `target` 了，而 `nums[left-1]` 可能是 `target`。见下图：
-![rightBound](../public/../images/postImgs/rightBound.png)
+
+![rightBound](/images/postImgs/rightBound.png)
 
 3. 为什么没有返回 `-1` 的操作？如果 `nums `中不存在 `target `这个值，怎么办？
 答：类似之前的左侧边界搜索，因为 `while` 的终止条件是 `left == right`，就是说 `left` 的取值范围是 `[0, nums.length]`，所以可以添加两行代码，正确地返回 `-1`:
@@ -287,7 +291,7 @@ int right_bound(int[] nums, int target) {
 }
 ```
 当`target`比所有的元素都小时，`right`会减小到`-1`,如下图：
-![outofleftBound](../public/images/../../images/postImgs/rightBoundSec.png)
+![outofleftBound](/images/postImgs/outOfBound.png)
 
 # 总结
 来梳理一下这些细节差异的因果逻辑：

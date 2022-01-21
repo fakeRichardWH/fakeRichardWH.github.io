@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="BinarySearch"/>
 <meta name="twitter:description" content="二分查找绕口令 管他左侧还右侧，搜索区间定乾坤 搜索一个元素时，搜索区间两端闭 while条件带等号，否则需要打补丁 if相等就返回，其他的事甭操心"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/binarysearch/" /><link rel="prev" href="http://localhost:1313/post/removeduplicatesinarray/" /><link rel="next" href="http://localhost:1313/post/shortcuts/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/binarysearch/" /><link rel="prev" href="http://localhost:1313/post/ooppython/" /><link rel="next" href="http://localhost:1313/post/shortcuts/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -290,17 +290,17 @@ while结束不算完，因为函数没返回
 <p>PS：这里先要说一个搜索左右边界和上面这个算法的一个区别，也是很多读者问的：刚才的<code>right</code> 不是<code>nums.length - 1</code>吗，为啥这里非要写成 <code>nums.length</code>使得「搜索区间」变成左闭右开呢？</p>
 <p>因为对于搜索左右侧边界的二分查找，这种写法比较普遍，我就拿这种写法举例了，保证你以后遇到这类代码可以理解。你非要用两端都闭的写法反而更简单，我会在后面写相关的代码，把三种二分搜索都用一种两端都闭的写法统一起来，你耐心往后看就行了。</p>
 <ol start="2">
-<li>为什么没有返回<code>-1</code>的操作？如果<code>nums</code>中不存在<code>target</code>这个值，怎么办？
-<img
+<li>为什么没有返回<code>-1</code>的操作？如果<code>nums</code>中不存在<code>target</code>这个值，怎么办？</li>
+</ol>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="../images/postImgs/findLeftBoundary.png"
-        data-srcset="../images/postImgs/findLeftBoundary.png, ../images/postImgs/findLeftBoundary.png 1.5x, ../images/postImgs/findLeftBoundary.png 2x"
+        data-src="/images/postImgs/findLeftBoundary.png"
+        data-srcset="/images/postImgs/findLeftBoundary.png, /images/postImgs/findLeftBoundary.png 1.5x, /images/postImgs/findLeftBoundary.png 2x"
         data-sizes="auto"
-        alt="../images/postImgs/findLeftBoundary.png"
-        title="alt binarySearch" />
-对于这个数组，算法会返回<code>1</code>,而这个<code>1</code>可以解读为<code>nums</code>中中小于<code>2</code>的元素有<code>1</code>个。</li>
-</ol>
+        alt="/images/postImgs/findLeftBoundary.png"
+        title="alt binarySearch" /></p>
+<p>对于这个数组，算法会返回<code>1</code>,而这个<code>1</code>可以解读为<code>nums</code>中中小于<code>2</code>的元素有<code>1</code>个。</p>
 <p>比如对于有序数组<code>nums = [2,3,5,7], target = 1</code>，算法会返回<code>0</code>，含义是：<code>nums</code>中小于<code>1</code>的元素有<code>0</code>个。</p>
 <p>再比如说 <code>nums = [2,3,5,7], target = 8</code>，算法会返回<code>4</code>，含义是：nums 中小于<code>8</code>的元素有<code>4</code>个。综上可以看出，函数的返回值（即<code>left</code>变量的值）取值区间是闭区间 <code>[0, nums.length]</code>，所以我们简单添加两行代码就能在正确的时候 <code>return -1</code></p>
 <div class="highlight"><div class="chroma">
@@ -329,7 +329,7 @@ while结束不算完，因为函数没返回
 <span class="k">return</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">==</span> <span class="n">target</span> <span class="o">?</span> <span class="n">left</span> <span class="o">:</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start="3">
+</div><ol>
 <li>为什么<code>left = mid + 1，right = mid</code>？和之前的算法不一样？</li>
 </ol>
 <p>答：这个很好解释，因为我们的「搜索区间」是<code>[left, right)</code>左闭右开，所以当<code>nums[mid]</code>被检测之后。
@@ -407,12 +407,12 @@ while结束不算完，因为函数没返回
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="../public/images/../../images/postImgs/outOfBound.png"
-        data-srcset="../public/images/../../images/postImgs/outOfBound.png, ../public/images/../../images/postImgs/outOfBound.png 1.5x, ../public/images/../../images/postImgs/outOfBound.png 2x"
+        data-src="/images/postImgs/outOfBound.png"
+        data-srcset="/images/postImgs/outOfBound.png, /images/postImgs/outOfBound.png 1.5x, /images/postImgs/outOfBound.png 2x"
         data-sizes="auto"
-        alt="../public/images/../../images/postImgs/outOfBound.png"
-        title="img" />
-因此，最后返回结果时，代码需要检查<strong>越界情况</strong>：</p>
+        alt="/images/postImgs/outOfBound.png"
+        title="img" /></p>
+<p>因此，最后返回结果时，代码需要检查<strong>越界情况</strong>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -547,14 +547,14 @@ while结束不算完，因为函数没返回
             <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span> <span class="c1">// 注意这里
 </span></code></pre></td></tr></table>
 </div>
-</div><p>这之后，<code>left</code>被更新为<code>left = mid + 1</code>，就是说<code>while</code>循环结束时，<code>nums[left]</code> 一定不等于 <code>target</code> 了，而 <code>nums[left-1]</code> 可能是 <code>target</code>。见下图：
-<img
+</div><p>这之后，<code>left</code>被更新为<code>left = mid + 1</code>，就是说<code>while</code>循环结束时，<code>nums[left]</code> 一定不等于 <code>target</code> 了，而 <code>nums[left-1]</code> 可能是 <code>target</code>。见下图：</p>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="../public/../images/postImgs/rightBound.png"
-        data-srcset="../public/../images/postImgs/rightBound.png, ../public/../images/postImgs/rightBound.png 1.5x, ../public/../images/postImgs/rightBound.png 2x"
+        data-src="/images/postImgs/rightBound.png"
+        data-srcset="/images/postImgs/rightBound.png, /images/postImgs/rightBound.png 1.5x, /images/postImgs/rightBound.png 2x"
         data-sizes="auto"
-        alt="../public/../images/postImgs/rightBound.png"
+        alt="/images/postImgs/rightBound.png"
         title="rightBound" /></p>
 <ol start="3">
 <li>为什么没有返回 <code>-1</code> 的操作？如果 <code>nums </code>中不存在 <code>target </code>这个值，怎么办？
@@ -625,10 +625,10 @@ while结束不算完，因为函数没返回
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="../public/images/../../images/postImgs/rightBoundSec.png"
-        data-srcset="../public/images/../../images/postImgs/rightBoundSec.png, ../public/images/../../images/postImgs/rightBoundSec.png 1.5x, ../public/images/../../images/postImgs/rightBoundSec.png 2x"
+        data-src="/images/postImgs/outOfBound.png"
+        data-srcset="/images/postImgs/outOfBound.png, /images/postImgs/outOfBound.png 1.5x, /images/postImgs/outOfBound.png 2x"
         data-sizes="auto"
-        alt="../public/images/../../images/postImgs/rightBoundSec.png"
+        alt="/images/postImgs/outOfBound.png"
         title="outofleftBound" /></p>
 <h1 id="总结">总结</h1>
 <p>来梳理一下这些细节差异的因果逻辑：</p>
