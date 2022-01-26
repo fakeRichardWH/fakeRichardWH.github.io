@@ -142,14 +142,5 @@
       <description>GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的用户名.github.io比如sophshep.github.io 详</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>http://localhost:1313/post/ml01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/ml01/</guid>
-      <description>朴素贝叶斯 解决的是多分类问题 边缘概率 $P(X) = \sum_{Y}P(X,Y)$ 从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定每个Y，对联合概率求和，从而消</description>
-    </item>
-    
   </channel>
 </rss>
