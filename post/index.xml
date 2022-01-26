@@ -6,7 +6,16 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Jan 2022 16:44:22 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Jan 2022 17:25:43 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pandas中loc和iloc区别</title>
+      <link>http://localhost:1313/post/pandas01/</link>
+      <pubDate>Wed, 26 Jan 2022 17:25:43 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pandas01/</guid>
+      <description>loc vs iloc loc函数：通过行索引 &amp;ldquo;Index&amp;rdquo; 中的具体值来取行数据（如取&amp;quot;Index&amp;quot;为&amp;quot;A&amp;quot;的行）可以认为是利用行</description>
+    </item>
+    
     <item>
       <title>Lambda函数使用</title>
       <link>http://localhost:1313/post/pythonusefulfunc/</link>

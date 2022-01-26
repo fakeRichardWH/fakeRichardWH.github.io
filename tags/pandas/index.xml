@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>pandas - Tag - fakeRichardWH的个人网站</title>
+        <link>http://localhost:1313/tags/pandas/</link>
+        <description>pandas - Tag - fakeRichardWH的个人网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 26 Jan 2022 17:25:43 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/pandas/" rel="self" type="application/rss+xml" /><item>
+    <title>Pandas中loc和iloc区别</title>
+    <link>http://localhost:1313/post/pandas01/</link>
+    <pubDate>Wed, 26 Jan 2022 17:25:43 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/pandas01/</guid>
+    <description><![CDATA[loc vs iloc loc函数：通过行索引 &ldquo;Index&rdquo; 中的具体值来取行数据（如取&quot;Index&quot;为&quot;A&quot;的行）可以认为是利用行]]></description>
+</item></channel>
+</rss>
