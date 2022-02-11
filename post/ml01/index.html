@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Pandas中loc和iloc区别 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Pandas中loc和iloc区别" />
+        <title>朴素贝叶斯 XGBOOST - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="朴素贝叶斯 XGBOOST" />
 <meta property="og:description" content="朴素贝叶斯 解决的是多分类问题 边缘概率 $P(X) = \sum_{Y}P(X,Y)$ 从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定每个Y，对联合概率求和，从而消" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/ml01/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
@@ -15,19 +15,19 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://localhost:1313/logo.png"/>
 
-<meta name="twitter:title" content="Pandas中loc和iloc区别"/>
+<meta name="twitter:title" content="朴素贝叶斯 XGBOOST"/>
 <meta name="twitter:description" content="朴素贝叶斯 解决的是多分类问题 边缘概率 $P(X) = \sum_{Y}P(X,Y)$ 从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定每个Y，对联合概率求和，从而消"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/ml01/" /><link rel="prev" href="http://localhost:1313/post/pandas01/" /><link rel="next" href="http://localhost:1313/post/leetcodeday03/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Pandas中loc和iloc区别",
+        "headline": "朴素贝叶斯 XGBOOST",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/post\/ml01\/"
-        },"genre": "post","keywords": "原理, 机器学习","wordcount":  613 ,
+        },"genre": "post","keywords": "ML原理","wordcount":  613 ,
         "url": "http:\/\/localhost:1313\/post\/ml01\/","datePublished": "2022-01-26T19:25:43+08:00","dateModified": "2022-01-26T19:25:43+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -99,13 +99,13 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Pandas中loc和iloc区别</h1><div class="content" id="content"><h1 id="朴素贝叶斯">朴素贝叶斯</h1>
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">朴素贝叶斯 XGBOOST</h1><div class="content" id="content"><h1 id="朴素贝叶斯">朴素贝叶斯</h1>
 <p>解决的是多分类问题</p>
 <h1 id="边缘概率">边缘概率</h1>
-<p>$P(X) = \sum_{Y}P(X,Y)$
+<p>$P(X) = \sum_{Y}P(X,Y)$<br>
 从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定每个Y，对联合概率求和，从而消除X的影响</p>
 <h1 id="条件概率">条件概率</h1>
-<p>$P(X, Y) = P(Y|X)P(X) = P(Y|X)P(X)$
+<p>$P(X, Y) = P(Y|X)P(X) = P(Y|X)P(X)$<br>
 $P(Y|X)$中由于X作为条件已经被确定了，那么减少（消除）了一部分的不确定性，而两个变量的联合不确定性更大，所以需要补充的就是X的不确定性
 $P(X,Y,Z) = P(X|Y,Z)P(X,Y|Z)P(Z)$
 $P(X,Y,Z)$的联合概率分布，需要的是以X为变量，将Y，Z作为确定条件来降低不确定性，而补充这一不确定性需要当Z确定时的X，Y的不确定性和Z单独的不确定性</p>
@@ -113,11 +113,12 @@ $P(X,Y,Z)$的联合概率分布，需要的是以X为变量，将Y，Z作为确�
 <p>$P(X, Y) = P(Y)P(X)$
 此时由于X，Y是相互独立的，所以X无论确定还是不确定，对Y的条件概率无影响，从而可以将朴素贝叶斯推出来</p>
 <blockquote>
-<p>条件独立性假设：<strong>在标签一定(被确定)的基础上</strong>，X向量或者说特征向量，各个特征之间相互独立</p>
-</blockquote>
-<p>$P(X^{(1)}=x^{(1)},X^{(2)}=x^{(2)}, &hellip;,X^{(n)}=x^{(n)}| Y = c_{k}) = \prod_{i}^{n}P(X^{(i)}=x^{(i)}|Y)$
-从而：
+<p>条件独立性假设：<strong>在标签一定(被确定)的基础上</strong>，X向量或者说特征向量，各个特征之间相互独立
+<br>
+$P(X^{(1)}=x^{(1)},X^{(2)}=x^{(2)}, &hellip;,X^{(n)}=x^{(n)}| Y = c_{k}) = \prod_{i}^{n}P(X^{(i)}=x^{(i)}|Y)$
+从而：<br>
 $P(X=\bf{x}|Y = c_{k}) = \prod_{i}^{n}P(X^{(i)}=x^{(i)}|Y)$</p>
+</blockquote>
 <h1 id="贝叶斯估计">贝叶斯估计</h1>
 <p>由于我们的采样的数据集可能偏向于只有某一类别的数据，导致某个类别的概率（频率）为0</p>
 <h1 id="xgboost">XGBoost</h1>

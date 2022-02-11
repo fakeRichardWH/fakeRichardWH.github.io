@@ -3,13 +3,20 @@
         <title>pandas - Tag - fakeRichardWH的个人网站</title>
         <link>http://localhost:1313/tags/pandas/</link>
         <description>pandas - Tag - fakeRichardWH的个人网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Feb 2022 16:48:38 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/pandas/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Feb 2022 17:54:06 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/pandas/" rel="self" type="application/rss+xml" /><item>
+    <title>Pandas数据查询</title>
+    <link>http://localhost:1313/post/pandas04/</link>
+    <pubDate>Fri, 11 Feb 2022 17:54:06 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/pandas04/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Pandas中DataFrame和Series总结</title>
     <link>http://localhost:1313/post/pandas03/</link>
     <pubDate>Fri, 11 Feb 2022 16:48:38 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://localhost:1313/post/pandas03/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[pandas数据结构 Pandas主要的两个数据结构是DataFrame 和 Series DataFrame: 二维数据结构,整个表格,多行多列 Series: 一维数据结构,可以看做是Dat]]></description>
 </item><item>
     <title>pandas数据读取</title>
     <link>http://localhost:1313/post/pandas02/</link>
@@ -17,12 +24,5 @@
     <author>Author</author>
     <guid>http://localhost:1313/post/pandas02/</guid>
     <description><![CDATA[pandas数据读取 Pandas读取表格类型的数据然后进行分析,支持的数据类型和读取方法如下 数据类型 格式 读取方法 csv, tsv, txt 用逗号分隔或者tab分]]></description>
-</item><item>
-    <title>Pandas中loc和iloc区别</title>
-    <link>http://localhost:1313/post/pandas01/</link>
-    <pubDate>Wed, 26 Jan 2022 17:25:43 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/post/pandas01/</guid>
-    <description><![CDATA[loc vs iloc loc函数：通过行索引 &ldquo;Index&rdquo; 中的具体值来取行数据（如取&quot;Index&quot;为&quot;A&quot;的行）可以认为是利用行]]></description>
 </item></channel>
 </rss>

@@ -1,4 +1,4 @@
-# 利用Hugo和GitHub Pages搭建个人博客网站
+# Hugo和GitHub Pages搭建个人博客网站
 
 
 # GitHub设置

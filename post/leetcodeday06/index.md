@@ -1,4 +1,4 @@
-# BinarySearch
+# leetcode-二分查找模版BinarySearch
 
 # 二分查找绕口令
 >管他左侧还右侧，搜索区间定乾坤<br>

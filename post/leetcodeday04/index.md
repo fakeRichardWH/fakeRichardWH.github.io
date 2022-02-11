@@ -1,4 +1,4 @@
-# 判断一个链表是否为回文结构-Palindrome LinkedList
+# leetcode-判断一个链表是否为回文结构-Palindrome LinkedList
 
 # Q1: 判断一个链表
 是否属于回文结构

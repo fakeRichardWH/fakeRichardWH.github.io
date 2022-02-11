@@ -4,11 +4,18 @@
         <link>http://localhost:1313/categories/machine-learning/</link>
         <description>machine learning - Category - fakeRichardWH的个人网站</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 26 Jan 2022 19:25:43 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/machine-learning/" rel="self" type="application/rss+xml" /><item>
-    <title>Pandas中loc和iloc区别</title>
+    <title>朴素贝叶斯 XGBOOST</title>
     <link>http://localhost:1313/post/ml01/</link>
     <pubDate>Wed, 26 Jan 2022 19:25:43 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://localhost:1313/post/ml01/</guid>
     <description><![CDATA[朴素贝叶斯 解决的是多分类问题 边缘概率 $P(X) = \sum_{Y}P(X,Y)$ 从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定每个Y，对联合概率求和，从而消]]></description>
+</item><item>
+    <title>推荐系统实验方法分类</title>
+    <link>http://localhost:1313/post/recommendationsystem01/</link>
+    <pubDate>Thu, 02 Dec 2021 18:46:07 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/recommendationsystem01/</guid>
+    <description><![CDATA[推荐系统的实验方法分类 1.离线实验 通过日志系统，获取用户行为数据，按照一定格式生产出一个标准的数据集 将数据集划分为训练集和测试集 在训练集上训]]></description>
 </item></channel>
 </rss>

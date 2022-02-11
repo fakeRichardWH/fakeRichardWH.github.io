@@ -11,14 +11,14 @@
     <guid>http://localhost:1313/post/leetcodeday00/</guid>
     <description><![CDATA[题目描述：给定两个可能存在环或者不存在环的单链表head1和head2，找到两个链表的第一个相交节点。 总体思路： 我们希望有一个函数能调用后，]]></description>
 </item><item>
-    <title>Copy Linkedlist with Random pointer</title>
+    <title>leetcode-复制含有随机指针的链表-Copy Linkedlist with Random pointer</title>
     <link>http://localhost:1313/post/leetcodeday05/</link>
     <pubDate>Wed, 10 Feb 2021 20:57:19 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://localhost:1313/post/leetcodeday05/</guid>
     <description><![CDATA[给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。构造这个链表的 深拷贝。 深拷贝应该正好由]]></description>
 </item><item>
-    <title>判断一个链表是否为回文结构-Palindrome LinkedList</title>
+    <title>leetcode-判断一个链表是否为回文结构-Palindrome LinkedList</title>
     <link>http://localhost:1313/post/leetcodeday04/</link>
     <pubDate>Mon, 08 Feb 2021 17:17:26 &#43;0800</pubDate>
     <author>Author</author>

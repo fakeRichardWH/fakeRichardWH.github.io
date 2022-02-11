@@ -6,14 +6,23 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Feb 2022 16:48:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 17:54:06 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pandas数据查询</title>
+      <link>http://localhost:1313/post/pandas04/</link>
+      <pubDate>Fri, 11 Feb 2022 17:54:06 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pandas04/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Pandas中DataFrame和Series总结</title>
       <link>http://localhost:1313/post/pandas03/</link>
       <pubDate>Fri, 11 Feb 2022 16:48:38 +0800</pubDate>
       
       <guid>http://localhost:1313/post/pandas03/</guid>
-      <description></description>
+      <description>pandas数据结构 Pandas主要的两个数据结构是DataFrame 和 Series DataFrame: 二维数据结构,整个表格,多行多列 Series: 一维数据结构,可以看做是Dat</description>
     </item>
     
     <item>
@@ -26,7 +35,7 @@
     </item>
     
     <item>
-      <title>Leetcode03</title>
+      <title>Leetcode-广度优先搜索模版</title>
       <link>http://localhost:1313/post/leetcodeday03/</link>
       <pubDate>Thu, 27 Jan 2022 19:57:26 +0800</pubDate>
       
@@ -35,7 +44,7 @@
     </item>
     
     <item>
-      <title>Pandas中loc和iloc区别</title>
+      <title>朴素贝叶斯 XGBOOST</title>
       <link>http://localhost:1313/post/ml01/</link>
       <pubDate>Wed, 26 Jan 2022 19:25:43 +0800</pubDate>
       
@@ -134,7 +143,7 @@
     </item>
     
     <item>
-      <title>java-Stack</title>
+      <title>Stack在JAVA中的API</title>
       <link>http://localhost:1313/post/java01/</link>
       <pubDate>Wed, 24 Nov 2021 17:30:02 +0800</pubDate>
       
@@ -143,7 +152,7 @@
     </item>
     
     <item>
-      <title>利用Hugo和GitHub Pages搭建个人博客网站</title>
+      <title>Hugo和GitHub Pages搭建个人博客网站</title>
       <link>http://localhost:1313/post/hugocreatesite/</link>
       <pubDate>Wed, 03 Nov 2021 20:42:40 +0800</pubDate>
       
@@ -152,7 +161,7 @@
     </item>
     
     <item>
-      <title>Copy Linkedlist with Random pointer</title>
+      <title>leetcode-复制含有随机指针的链表-Copy Linkedlist with Random pointer</title>
       <link>http://localhost:1313/post/leetcodeday05/</link>
       <pubDate>Wed, 10 Feb 2021 20:57:19 +0800</pubDate>
       
@@ -161,7 +170,7 @@
     </item>
     
     <item>
-      <title>BinarySearch</title>
+      <title>leetcode-二分查找模版BinarySearch</title>
       <link>http://localhost:1313/post/leetcodeday06/</link>
       <pubDate>Tue, 09 Feb 2021 21:31:27 +0800</pubDate>
       
@@ -170,7 +179,7 @@
     </item>
     
     <item>
-      <title>判断一个链表是否为回文结构-Palindrome LinkedList</title>
+      <title>leetcode-判断一个链表是否为回文结构-Palindrome LinkedList</title>
       <link>http://localhost:1313/post/leetcodeday04/</link>
       <pubDate>Mon, 08 Feb 2021 17:17:26 +0800</pubDate>
       
