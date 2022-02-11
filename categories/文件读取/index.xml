@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>文件读取 - Category - fakeRichardWH的个人网站</title>
+        <link>http://localhost:1313/categories/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</link>
+        <description>文件读取 - Category - fakeRichardWH的个人网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Feb 2022 16:17:10 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/" rel="self" type="application/rss+xml" /><item>
+    <title>pandas02</title>
+    <link>http://localhost:1313/post/pandas02/</link>
+    <pubDate>Fri, 11 Feb 2022 16:17:10 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/pandas02/</guid>
+    <description><![CDATA[pandas数据读取 Pandas读取表格类型的数据然后进行分析,支持的数据类型和读取方法如下 数据类型 格式 读取方法 csv, tsv, txt 用逗号分隔或者tab分]]></description>
+</item></channel>
+</rss>

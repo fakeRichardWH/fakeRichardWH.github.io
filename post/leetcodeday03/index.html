@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Leetcode03 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Leetcode03" />
+<meta property="og:description" content="广度优先搜索模版 核心思路 BFS核心思想就是把问题抽象为一个图，从一个节点开始，向四周扩散。一般来说，BFS都会使用到一个队列，这样就可以将一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/leetcodeday03/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-27T19:57:26+08:00" />
+<meta property="article:modified_time" content="2022-01-27T19:57:26+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+
+<meta name="twitter:title" content="Leetcode03"/>
+<meta name="twitter:description" content="广度优先搜索模版 核心思路 BFS核心思想就是把问题抽象为一个图，从一个节点开始，向四周扩散。一般来说，BFS都会使用到一个队列，这样就可以将一"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/leetcodeday03/" /><link rel="prev" href="http://localhost:1313/post/ml01/" /><link rel="next" href="http://localhost:1313/post/pandas02/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Leetcode03",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/post\/leetcodeday03\/"
+        },"genre": "post","wordcount":  1732 ,
+        "url": "http:\/\/localhost:1313\/post\/leetcodeday03\/","datePublished": "2022-01-27T19:57:26+08:00","dateModified": "2022-01-27T19:57:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "RichardWWHH"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="fakeRichardWH的个人网站"></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/post/"> 文章/articles </a><a class="menu-item" href="/tags/"> 标签/tags </a><a class="menu-item" href="/categories/"> 分类/categories </a><a class="menu-item" href="/about/"> 关于我/about me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="fakeRichardWH的个人网站"></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/post/" title="">文章/articles</a><a class="menu-item" href="/tags/" title="">标签/tags</a><a class="menu-item" href="/categories/" title="">分类/categories</a><a class="menu-item" href="/about/" title="">关于我/about me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Leetcode03</h1><div class="content" id="content"><h1 id="广度优先搜索模版">广度优先搜索模版</h1>
+<h2 id="核心思路">核心思路</h2>
+<p>BFS核心思想就是<strong>把问题抽象为一个图</strong>，从一个节点开始，向四周扩散。一般来说，BFS都会使用到一个<code>队列</code>，这样就可以将一个节点周围的所有节点加入队列。
+BFS相较于DFS（回溯算法）,但代价就是空间复杂度要比DFS高。</p>
+<h2 id="算法框架">算法框架</h2>
+<p>问题的本质就是在一个<strong>图</strong>中，从<strong>起点</strong><code>start</code>找到<strong>终点</strong><code>target</code>的最短距离，BFS的本质就是干这个事情。这个问题的描述可以有各种变体：</p>
+<ol>
+<li>走迷宫、岛屿数量。这类问题会添加限定条件比如某些位置不能走。</li>
+<li>有两个单词，给出一些固定/非固定的替换，将其中一个变为另一个，每次能替换一个字符，最少要替换几次？</li>
+<li>连连看，点击两个坐标，如何判断两者中的最短连线有几个拐点？</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 计算起点 start 到终点 target 的最近距离
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">bfs</span><span class="o">(</span><span class="n">Node</span> <span class="n">start</span><span class="o">,</span> <span class="n">Node</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">q</span><span class="o">;</span> <span class="c1">//核心数据结构：队列
+</span><span class="c1"></span>    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">visited</span><span class="o">;</span> <span class="c1">// 避免重复访问 走回头路
+</span><span class="c1"></span>    <span class="c1">// 将起点加入 初始队列
+</span><span class="c1"></span>    <span class="n">q</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">start</span><span class="o">);</span>
+    <span class="n">visited</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">start</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">step</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="c1">// 记录当前扩散到哪一步？
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(!</span><span class="n">q</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">)</span> <span class="o">{</span> <span class="c1">//队列不为空
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="c1">//记录当前队列扩散了多少个节点
+</span><span class="c1"></span>        <span class="cm">/* 将当前队列中的所有节点向四周扩散 */</span>
+        <span class="c1">// 当前层 加入 queue
+</span><span class="c1"></span>        <span class="k">for</span><span class="err">（</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">Node</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">cur</span> <span class="n">is</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+                <span class="cm">/* 判断是否是终点 */</span>
+                <span class="k">return</span> <span class="n">step</span><span class="o">;</span><span class="c1">// 最短路径生成
+</span><span class="c1"></span>            <span class="o">}</span>
+            <span class="cm">/* 当前节点的相邻节点加入队列中*/</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Node</span> <span class="n">x</span> <span class="o">:</span> <span class="n">cur</span><span class="o">.</span><span class="na">adjacent</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">q</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+                <span class="n">visited</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="c1">//当前层遍历完
+</span><span class="c1"></span>        <span class="n">step</span><span class="o">++;</span><span class="c1">//对最短路径长度更新
+</span><span class="c1"></span>    <span class="o">}</span>
+    <span class="c1">// 队列为空，广度搜索结束
+</span><span class="c1"></span>    
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>队列<code>q</code>就不说了，BFS的核心数据结构；<code>cur.adj()</code> 泛指 <code>cur</code> 相邻的节点，比如说<strong>二维数组</strong>中，<code>cur</code> <strong>上下左右</strong>四面的位置就是相邻节点；<code>visited</code> 的主要作用是防止走回头路，大部分时候都是必须的，<strong>但是像一般的二叉树结构</strong>，没有子节点到父节点的指针，<strong>不会走回头路就不需要</strong> <code>visited</code>。
+至于为啥这样就一定是最短的路径呢，可以用反证法的思维，假设扩散到某一层的target位置已经是最短路径了，那么前面的层一定不包含target，否则就会终止扩散。</p>
+<h2 id="二叉树的最小高度">二叉树的最小高度</h2>
+<blockquote>
+<p>给定一个二叉树，找出其最小的深度，最小深度就是指从根节点到最近的叶子节点的节点数量。
+叶子节点就是左右子节点都为<code>null</code></p>
+</blockquote>
+<h3 id="思考的逻辑">思考的逻辑：</h3>
+<p>如何套用到BFS呢？</p>
+<ol>
+<li>明确起点 <strong><code>start</code></strong> 及终点 <strong><code>target</code></strong> 分别是什么，并且在什么条件下到达了终点</li>
+<li>队列存储的是一系列待扩散的节点，利用for循环遍历队列中的节点，并且判断是否达到了目标节点
+那在这里，起点就是root，终点就是叶节点，怎么判断是否到了叶节点？
+<code>if (cur.left == null &amp;&amp; cur.right == null)</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="nf">minHeight</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Linkedlist</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="c1">//HashSet&lt;TreeNode&gt; visited = new HashSet&lt;&gt;(); 不再是必要的了 因为二叉树不会重复访问
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">queue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">minHeight</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(!</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">TreeNode</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">cur</span><span class="o">.</span><span class="na">right</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">minHeight</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="c1">// 否则就再将节点的左子树节点加入到队列中
+</span><span class="c1"></span>            <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">queue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">queue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">minHeight</span><span class="o">++;</span>
+    <span class="o">}</span>    
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="岛屿数量">岛屿数量</h2>
+<blockquote>
+<p>给定一个由 &lsquo;1&rsquo;（陆地）和 &lsquo;0&rsquo;（水）组成的的二维网格，计算岛屿的数量。
+一个岛被水包围，并且它是通过水平方向或垂直方向上相邻的陆地连接而成的。
+你可以假设网格的四个边均被水包围。</p>
+</blockquote>
+<blockquote>
+<p>示例 1:
+输入:
+11110
+11010
+11000
+00000
+输出: 1 (总共有1个岛屿)</p>
+</blockquote>
+<blockquote>
+<p>示例 2:
+输入:
+11000
+11000
+00100
+00011
+输出: 3</p>
+</blockquote>
+<h3 id="大体思路1-深度优先遍历">大体思路1: 深度优先遍历：</h3>
+<p>1.初始状态所有顶点都没被访问，从每一个顶点<code>v</code>出发，先访问该顶点<code>v</code>
+2.依次从 <code>v</code> 的各个 未被访问<code>visited[i][j] == false</code>的临接顶点出发，以相同的逻辑遍历图，直到图中所有和<code>v</code>相通的顶点都被访问到
+3.遍历完后，还有其他的点没有被访问到，则另选一个未被访问的顶点作为起始点
+4.重复上述过程，直至所有点被访问</p>
+<h4 id="本题思路上下左右相连为1的才被认为是连续岛屿">本题思路，上下左右相连为<code>1</code>的才被认为是连续岛屿</h4>
+<p>DFS方式：</p>
+<ol>
+<li>设定目前指向一个岛屿中的某个点<code>(i, j)</code>,寻找包含此点的边界
+1.1 从 <code>(i, j)</code>向此点的上下左右 <code>(i + 1, j)</code>，<code>(i - 1, j)</code>，<code>(i, j + 1)</code>，<code>(i, j - 1)</code>做深度搜索
+1.2 终止条件：
+1.2.1 <code>(i, j)</code>越过了矩阵的边界
+1.2.2 grid[i][j] == 0，代表此时分支已经越过了岛屿边界</li>
+</ol>
+<h3 id="代码实现">代码实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">leetcode</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">island</span><span class="o">;</span>
+    <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">dx</span> <span class="o">=</span> <span class="o">{-</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">};</span>
+    <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">dy</span> <span class="o">=</span> <span class="o">{</span><span class="n">0</span><span class="o">,</span> <span class="o">-</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">};</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">rows</span><span class="o">;</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">cols</span><span class="o">;</span>
+    <span class="kd">static</span> <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">visited</span><span class="o">;</span> <span class="c1">// 要构建一个和岛屿大小数量一致的数组 
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">sc</span><span class="o">.</span><span class="na">hasNextLine</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">).</span><span class="na">length</span><span class="o">();</span>
+        <span class="n">island</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">rows</span><span class="o">][</span><span class="n">cols</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">rows</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">cols</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">island</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">deeptoString</span><span class="o">(</span><span class="n">island</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></div><div id="comments"></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">RichardWWHH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
