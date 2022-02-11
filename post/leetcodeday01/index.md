@@ -1,4 +1,4 @@
-# LeetcodeDay01
+# 两数之和-twoSum
 
 # 两数之和
 ## 思路1:

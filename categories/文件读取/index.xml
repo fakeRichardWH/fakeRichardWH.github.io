@@ -4,7 +4,7 @@
         <link>http://localhost:1313/categories/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</link>
         <description>文件读取 - Category - fakeRichardWH的个人网站</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Feb 2022 16:17:10 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/" rel="self" type="application/rss+xml" /><item>
-    <title>pandas02</title>
+    <title>pandas数据读取</title>
     <link>http://localhost:1313/post/pandas02/</link>
     <pubDate>Fri, 11 Feb 2022 16:17:10 &#43;0800</pubDate>
     <author>Author</author>

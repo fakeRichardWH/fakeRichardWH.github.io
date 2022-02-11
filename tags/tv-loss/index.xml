@@ -5,10 +5,10 @@
         <description>TV loss - Tag - fakeRichardWH的个人网站</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 07 Dec 2021 19:41:09 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/tv-loss/" rel="self" type="application/rss+xml" /><item>
     <title>深度学习-CNN相关01</title>
-    <link>http://localhost:1313/post/deeplearning-cnn-fundamentals1/</link>
+    <link>http://localhost:1313/post/dl02/</link>
     <pubDate>Tue, 07 Dec 2021 19:41:09 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://localhost:1313/post/deeplearning-cnn-fundamentals1/</guid>
+    <guid>http://localhost:1313/post/dl02/</guid>
     <description><![CDATA[在图像复原的过程中，图像上一点点噪声就可能对复原的结果产生较大影响，由于复原算法本身一般都会放大噪声，这时候需要在最优化的问题模型中添加一个]]></description>
 </item></channel>
 </rss>

@@ -1,4 +1,4 @@
-# Shortcuts
+# Shortcuts VSCODE快捷键
 
 # VSCODE快捷键配置 [Mac]
 下载好Markdown All in One这个插件后：

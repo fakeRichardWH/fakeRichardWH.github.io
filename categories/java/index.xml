@@ -10,40 +10,5 @@
     <author>Author</author>
     <guid>http://localhost:1313/post/leetcodeday03/</guid>
     <description><![CDATA[广度优先搜索模版 核心思路 BFS核心思想就是把问题抽象为一个图，从一个节点开始，向四周扩散。一般来说，BFS都会使用到一个队列，这样就可以将一]]></description>
-</item><item>
-    <title>LeetcodeDay02</title>
-    <link>http://localhost:1313/post/leetcodeday02/</link>
-    <pubDate>Wed, 12 Jan 2022 14:55:48 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/post/leetcodeday02/</guid>
-    <description><![CDATA[题目 前提条件： 两个有序数组均为正序列，且两个数组有且仅有一个会是空数组 nums1.length = m,nums1.length = n 如果m+n == 2k,那么中位数为第k和k+1位置的数据的之和的]]></description>
-</item><item>
-    <title>LeetcodeDay01</title>
-    <link>http://localhost:1313/post/leetcodeday01/</link>
-    <pubDate>Tue, 11 Jan 2022 12:21:12 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/post/leetcodeday01/</guid>
-    <description><![CDATA[两数之和 思路1: 思路一: 对于nums数组中每个位置i上的x，要找到target-x,可以使用两层遍历，第一层遍历是遍历数组中的每个数字，第二]]></description>
-</item><item>
-    <title>leetcode-寻找入环节点</title>
-    <link>http://localhost:1313/post/findloopnodeinlinkelist/</link>
-    <pubDate>Sat, 04 Dec 2021 16:42:48 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/post/findloopnodeinlinkelist/</guid>
-    <description><![CDATA[题目描述：给定两个可能存在环或者不存在环的单链表head1和head2，找到两个链表的第一个相交节点。 总体思路： 我们希望有一个函数能调用后，]]></description>
-</item><item>
-    <title>leetcode-Copy Linkedlist with Random pointer</title>
-    <link>http://localhost:1313/post/copylistwithrand/</link>
-    <pubDate>Wed, 24 Nov 2021 20:57:19 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/post/copylistwithrand/</guid>
-    <description><![CDATA[给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。构造这个链表的 深拷贝。 深拷贝应该正好由]]></description>
-</item><item>
-    <title>leetcode-判断一个链表是否为回文结构</title>
-    <link>http://localhost:1313/post/palindromelinkedlist/</link>
-    <pubDate>Wed, 24 Nov 2021 17:17:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/post/palindromelinkedlist/</guid>
-    <description><![CDATA[Q1: 判断一个链表 是否属于回文结构 1 2 3 4 5 6 7 8 9 // example1 input: 1 -&gt; 2 -&gt; 23 -&gt; 23 -&gt; 2 -&gt; 1 output: true // example2 input: 1 -&gt; 2 -&gt; 23 -&gt; 2 -&gt; 1 output: true // example3 input: 1 -&gt; 2 -&gt; 23 -&gt; 3 -&gt; 1 output: false 思路]]></description>
 </item></channel>
 </rss>

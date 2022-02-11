@@ -5,17 +5,17 @@
         <description>踩坑 - Tag - fakeRichardWH的个人网站</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 11 Dec 2021 15:41:12 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E8%B8%A9%E5%9D%91/" rel="self" type="application/rss+xml" /><item>
     <title>Python迭代器及常用函数</title>
-    <link>http://localhost:1313/post/ooppython/</link>
+    <link>http://localhost:1313/post/python01/</link>
     <pubDate>Sat, 11 Dec 2021 15:41:12 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://localhost:1313/post/ooppython/</guid>
+    <guid>http://localhost:1313/post/python01/</guid>
     <description><![CDATA[迭代器 可以被next()函数调用并且不断返回下一个值的对象统称为迭代器:Iterator 迭代对象 可以直接作用于for循环的对象，称为可迭代对]]></description>
 </item><item>
     <title>Pytorch中view方法的坑</title>
-    <link>http://localhost:1313/post/numpytensortraps/</link>
+    <link>http://localhost:1313/post/pytorch01/</link>
     <pubDate>Sat, 11 Dec 2021 14:41:12 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://localhost:1313/post/numpytensortraps/</guid>
+    <guid>http://localhost:1313/post/pytorch01/</guid>
     <description><![CDATA[pytorch View视图 你咋就这么特别呢？ 查看Pytorch官方文档: PyTorch allows a tensor to be a View(视图) of an existing tensor.View(视图) tensor shares the same underlying data with]]></description>
 </item></channel>
 </rss>

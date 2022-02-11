@@ -6,9 +6,18 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Feb 2022 16:17:10 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Feb 2022 16:48:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>pandas02</title>
+      <title>Pandas中DataFrame和Series总结</title>
+      <link>http://localhost:1313/post/pandas03/</link>
+      <pubDate>Fri, 11 Feb 2022 16:48:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pandas03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pandas数据读取</title>
       <link>http://localhost:1313/post/pandas02/</link>
       <pubDate>Fri, 11 Feb 2022 16:17:10 +0800</pubDate>
       
@@ -45,15 +54,15 @@
     
     <item>
       <title>Lambda函数使用</title>
-      <link>http://localhost:1313/post/pythonusefulfunc/</link>
+      <link>http://localhost:1313/post/python02/</link>
       <pubDate>Fri, 21 Jan 2022 16:44:22 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/pythonusefulfunc/</guid>
+      <guid>http://localhost:1313/post/python02/</guid>
       <description>匿名函数 以lambda 作为关键字,可以在一行内完成定义和声明，这个匿名函数由于没有实际的名称，所以一般在Python中没有什么复杂的功能。 语</description>
     </item>
     
     <item>
-      <title>LeetcodeDay02</title>
+      <title>找到两数组中的中位数</title>
       <link>http://localhost:1313/post/leetcodeday02/</link>
       <pubDate>Wed, 12 Jan 2022 14:55:48 +0800</pubDate>
       
@@ -62,7 +71,7 @@
     </item>
     
     <item>
-      <title>LeetcodeDay01</title>
+      <title>两数之和-twoSum</title>
       <link>http://localhost:1313/post/leetcodeday01/</link>
       <pubDate>Tue, 11 Jan 2022 12:21:12 +0800</pubDate>
       
@@ -71,7 +80,7 @@
     </item>
     
     <item>
-      <title>Shortcuts</title>
+      <title>Shortcuts VSCODE快捷键</title>
       <link>http://localhost:1313/post/shortcuts/</link>
       <pubDate>Wed, 22 Dec 2021 16:52:47 +0800</pubDate>
       
@@ -80,52 +89,43 @@
     </item>
     
     <item>
-      <title>BinarySearch</title>
-      <link>http://localhost:1313/post/binarysearch/</link>
-      <pubDate>Tue, 21 Dec 2021 21:31:27 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/binarysearch/</guid>
-      <description>二分查找绕口令 管他左侧还右侧，搜索区间定乾坤 搜索一个元素时，搜索区间两端闭 while条件带等号，否则需要打补丁 if相等就返回，其他的事甭操心</description>
-    </item>
-    
-    <item>
       <title>Python迭代器及常用函数</title>
-      <link>http://localhost:1313/post/ooppython/</link>
+      <link>http://localhost:1313/post/python01/</link>
       <pubDate>Sat, 11 Dec 2021 15:41:12 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/ooppython/</guid>
+      <guid>http://localhost:1313/post/python01/</guid>
       <description>迭代器 可以被next()函数调用并且不断返回下一个值的对象统称为迭代器:Iterator 迭代对象 可以直接作用于for循环的对象，称为可迭代对</description>
     </item>
     
     <item>
       <title>Pytorch中view方法的坑</title>
-      <link>http://localhost:1313/post/numpytensortraps/</link>
+      <link>http://localhost:1313/post/pytorch01/</link>
       <pubDate>Sat, 11 Dec 2021 14:41:12 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/numpytensortraps/</guid>
+      <guid>http://localhost:1313/post/pytorch01/</guid>
       <description>pytorch View视图 你咋就这么特别呢？ 查看Pytorch官方文档: PyTorch allows a tensor to be a View(视图) of an existing tensor.View(视图) tensor shares the same underlying data with</description>
     </item>
     
     <item>
       <title>深度学习-CNN相关01</title>
-      <link>http://localhost:1313/post/deeplearning-cnn-fundamentals1/</link>
+      <link>http://localhost:1313/post/dl02/</link>
       <pubDate>Tue, 07 Dec 2021 19:41:09 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/deeplearning-cnn-fundamentals1/</guid>
+      <guid>http://localhost:1313/post/dl02/</guid>
       <description>在图像复原的过程中，图像上一点点噪声就可能对复原的结果产生较大影响，由于复原算法本身一般都会放大噪声，这时候需要在最优化的问题模型中添加一个</description>
     </item>
     
     <item>
       <title>leetcode-寻找入环节点</title>
-      <link>http://localhost:1313/post/findloopnodeinlinkelist/</link>
+      <link>http://localhost:1313/post/leetcodeday00/</link>
       <pubDate>Sat, 04 Dec 2021 16:42:48 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/findloopnodeinlinkelist/</guid>
+      <guid>http://localhost:1313/post/leetcodeday00/</guid>
       <description>题目描述：给定两个可能存在环或者不存在环的单链表head1和head2，找到两个链表的第一个相交节点。 总体思路： 我们希望有一个函数能调用后，</description>
     </item>
     
     <item>
-      <title>RecommendationSystem 01</title>
+      <title>推荐系统实验方法分类</title>
       <link>http://localhost:1313/post/recommendationsystem01/</link>
       <pubDate>Thu, 02 Dec 2021 18:46:07 +0800</pubDate>
       
@@ -134,30 +134,12 @@
     </item>
     
     <item>
-      <title>leetcode-Copy Linkedlist with Random pointer</title>
-      <link>http://localhost:1313/post/copylistwithrand/</link>
-      <pubDate>Wed, 24 Nov 2021 20:57:19 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/copylistwithrand/</guid>
-      <description>给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。构造这个链表的 深拷贝。 深拷贝应该正好由</description>
-    </item>
-    
-    <item>
       <title>java-Stack</title>
-      <link>http://localhost:1313/post/stack/</link>
+      <link>http://localhost:1313/post/java01/</link>
       <pubDate>Wed, 24 Nov 2021 17:30:02 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/stack/</guid>
+      <guid>http://localhost:1313/post/java01/</guid>
       <description>为什么Java的集合类没有单独的Stack接口呢？因为有个遗留类名字就叫Stack，出于兼容性考虑，所以没办法创建Stack接口，只能用De</description>
-    </item>
-    
-    <item>
-      <title>leetcode-判断一个链表是否为回文结构</title>
-      <link>http://localhost:1313/post/palindromelinkedlist/</link>
-      <pubDate>Wed, 24 Nov 2021 17:17:26 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/palindromelinkedlist/</guid>
-      <description>Q1: 判断一个链表 是否属于回文结构 1 2 3 4 5 6 7 8 9 // example1 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 23 -&amp;gt; 2 -&amp;gt; 1 output: true // example2 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 2 -&amp;gt; 1 output: true // example3 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 3 -&amp;gt; 1 output: false 思路</description>
     </item>
     
     <item>
@@ -167,6 +149,33 @@
       
       <guid>http://localhost:1313/post/hugocreatesite/</guid>
       <description>GitHub设置 首先创建个人网站的一个repo： 注意命名规则:一定是你的用户名.github.io比如sophshep.github.io 详</description>
+    </item>
+    
+    <item>
+      <title>Copy Linkedlist with Random pointer</title>
+      <link>http://localhost:1313/post/leetcodeday05/</link>
+      <pubDate>Wed, 10 Feb 2021 20:57:19 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/leetcodeday05/</guid>
+      <description>给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。构造这个链表的 深拷贝。 深拷贝应该正好由</description>
+    </item>
+    
+    <item>
+      <title>BinarySearch</title>
+      <link>http://localhost:1313/post/leetcodeday06/</link>
+      <pubDate>Tue, 09 Feb 2021 21:31:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/leetcodeday06/</guid>
+      <description>二分查找绕口令 管他左侧还右侧，搜索区间定乾坤 搜索一个元素时，搜索区间两端闭 while条件带等号，否则需要打补丁 if相等就返回，其他的事甭操心</description>
+    </item>
+    
+    <item>
+      <title>判断一个链表是否为回文结构-Palindrome LinkedList</title>
+      <link>http://localhost:1313/post/leetcodeday04/</link>
+      <pubDate>Mon, 08 Feb 2021 17:17:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/leetcodeday04/</guid>
+      <description>Q1: 判断一个链表 是否属于回文结构 1 2 3 4 5 6 7 8 9 // example1 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 23 -&amp;gt; 2 -&amp;gt; 1 output: true // example2 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 2 -&amp;gt; 1 output: true // example3 input: 1 -&amp;gt; 2 -&amp;gt; 23 -&amp;gt; 3 -&amp;gt; 1 output: false 思路</description>
     </item>
     
   </channel>
