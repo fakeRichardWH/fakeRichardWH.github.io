@@ -11,14 +11,14 @@
     <guid>http://localhost:1313/post/leetcodeday03/</guid>
     <description><![CDATA[广度优先搜索模版 核心思路 BFS核心思想就是把问题抽象为一个图，从一个节点开始，向四周扩散。一般来说，BFS都会使用到一个队列，这样就可以将一]]></description>
 </item><item>
-    <title>找到两数组中的中位数</title>
+    <title>leetcode-找到两数组中的中位数</title>
     <link>http://localhost:1313/post/leetcodeday02/</link>
     <pubDate>Wed, 12 Jan 2022 14:55:48 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://localhost:1313/post/leetcodeday02/</guid>
     <description><![CDATA[题目 前提条件： 两个有序数组均为正序列，且两个数组有且仅有一个会是空数组 nums1.length = m,nums1.length = n 如果m+n == 2k,那么中位数为第k和k+1位置的数据的之和的]]></description>
 </item><item>
-    <title>两数之和-twoSum</title>
+    <title>leetcode-两数之和twoSum</title>
     <link>http://localhost:1313/post/leetcodeday01/</link>
     <pubDate>Tue, 11 Jan 2022 12:21:12 &#43;0800</pubDate>
     <author>Author</author>

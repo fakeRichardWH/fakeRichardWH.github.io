@@ -6,7 +6,16 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Feb 2022 17:54:06 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 16:44:22 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python中with使用及远离</title>
+      <link>http://localhost:1313/post/python03/</link>
+      <pubDate>Sun, 13 Feb 2022 16:44:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/python03/</guid>
+      <description>with关键字 with语句用于异常处理,相当于是对try...excepty...finally进行了封装,缩短了Python代码,简化了文</description>
+    </item>
+    
     <item>
       <title>Pandas数据查询</title>
       <link>http://localhost:1313/post/pandas04/</link>
@@ -44,12 +53,21 @@
     </item>
     
     <item>
-      <title>朴素贝叶斯 XGBOOST</title>
+      <title>XGBOOST</title>
+      <link>http://localhost:1313/post/ml02/</link>
+      <pubDate>Wed, 26 Jan 2022 19:25:43 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ml02/</guid>
+      <description>XGBoost 由于它计算的准而且快，所以用在各大比赛当中使用的多，不要迷信深度学习 xGBoost = extreme + GBDT = extreme + Gradient + BoostDT Boosting -&amp;gt; Boosting DT -&amp;gt; gradient BDT -&amp;gt; 使用了一阶梯度信息 所谓的最优函数</description>
+    </item>
+    
+    <item>
+      <title>朴素贝叶斯及监督学习模型的分类</title>
       <link>http://localhost:1313/post/ml01/</link>
       <pubDate>Wed, 26 Jan 2022 19:25:43 +0800</pubDate>
       
       <guid>http://localhost:1313/post/ml01/</guid>
-      <description>朴素贝叶斯 解决的是多分类问题 边缘概率 $P(X) = \sum_{Y}P(X,Y)$ 从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定每个Y，对联合概率求和，从而消</description>
+      <description>朴素贝叶斯 目标: 解决的是多分类问题. 假设训练数据为$(X,Y)$,其中X为属性集合,Y为类别标记,这时候我们需要对新产生的样本x,进行类别预</description>
     </item>
     
     <item>
@@ -71,7 +89,7 @@
     </item>
     
     <item>
-      <title>找到两数组中的中位数</title>
+      <title>leetcode-找到两数组中的中位数</title>
       <link>http://localhost:1313/post/leetcodeday02/</link>
       <pubDate>Wed, 12 Jan 2022 14:55:48 +0800</pubDate>
       
@@ -80,7 +98,7 @@
     </item>
     
     <item>
-      <title>两数之和-twoSum</title>
+      <title>leetcode-两数之和twoSum</title>
       <link>http://localhost:1313/post/leetcodeday01/</link>
       <pubDate>Tue, 11 Jan 2022 12:21:12 +0800</pubDate>
       
@@ -95,15 +113,6 @@
       
       <guid>http://localhost:1313/post/shortcuts/</guid>
       <description>VSCODE快捷键配置 [Mac] 下载好Markdown All in One这个插件后： 先输入Command + Shift + p : ，再找到默认键盘设置:(Open Default Keyboard Shortcut Settings J</description>
-    </item>
-    
-    <item>
-      <title>Python迭代器及常用函数</title>
-      <link>http://localhost:1313/post/python01/</link>
-      <pubDate>Sat, 11 Dec 2021 15:41:12 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/python01/</guid>
-      <description>迭代器 可以被next()函数调用并且不断返回下一个值的对象统称为迭代器:Iterator 迭代对象 可以直接作用于for循环的对象，称为可迭代对</description>
     </item>
     
     <item>

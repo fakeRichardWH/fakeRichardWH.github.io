@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>with - Tag - fakeRichardWH的个人网站</title>
+        <link>http://localhost:1313/tags/with/</link>
+        <description>with - Tag - fakeRichardWH的个人网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 13 Feb 2022 16:44:22 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/with/" rel="self" type="application/rss+xml" /><item>
+    <title>Python中with使用及远离</title>
+    <link>http://localhost:1313/post/python03/</link>
+    <pubDate>Sun, 13 Feb 2022 16:44:22 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/python03/</guid>
+    <description><![CDATA[with关键字 with语句用于异常处理,相当于是对try...excepty...finally进行了封装,缩短了Python代码,简化了文]]></description>
+</item></channel>
+</rss>

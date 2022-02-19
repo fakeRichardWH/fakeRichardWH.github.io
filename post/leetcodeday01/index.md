@@ -1,4 +1,4 @@
-# 两数之和-twoSum
+# leetcode-两数之和twoSum
 
 # 两数之和
 ## 思路1:

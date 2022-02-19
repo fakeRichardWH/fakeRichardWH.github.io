@@ -109,3 +109,29 @@ dtype: object
 ## 从DataFrame中查询
 - 如果只查询的是一列或者一行,那么返回值是pd.Series
 - 如果查询的是多列且多行,那么返回值是pd.DataFrame
+### 查询列
+```python
+# 结果为Series
+type(df["year"])
+# 结果为DataFrame
+type(df[["year","Dash"]])
+```
+### 查询行 
+**一般切片查询是不包含末尾的3,但是loc是包含的**
+返回的index是列名
+```python
+df.loc[1]
+Out[9]:
+states    Nevada
+year        2000
+Dash         1.3
+
+# 查询多行 
+df.loc[1:3]
+Out[10]:
+states	year	Dash
+1	Nevada	2000	1.3
+2	Florida	2011	1.4
+3	California	2002	1.5
+```
+

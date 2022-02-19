@@ -116,18 +116,14 @@ int minHeight(TreeNode root) {
     1.2 终止条件：
         1.2.1 `(i, j)`越过了矩阵的边界
         1.2.2 grid[i][j] == 0，代表此时分支已经越过了岛屿边界
+    1.3 搜索岛屿的同时,执行grid[i][j] = 0,代表该位置已经搜索过了
 
 ### 代码实现
 ```java
 package leetcode;
 import java.util.*;
 public class Main {
-    static int[][] island;
-    static int[] dx = {-1, 0, 1, 0};
-    static int[] dy = {0, -1, 0, 1};
-    static int rows;
-    static int cols;
-    static boolean[][] visited; // 要构建一个和岛屿大小数量一致的数组 
+    static int[][] grid;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<String> list = new ArrayList<>();
@@ -136,15 +132,45 @@ public class Main {
         }
         rows = list.size();
         cols = list.get(0).length();
-        island = new int[rows][cols];
+        grid = new int[rows][cols];
         for (int i = 0; i < rows; i++) {
             for(int j = 0; j < cols; j++) {
-                island[i][j] = list.get(i).charAt(j);
+                grid[i][j] = list.get(i).charAt(j);
             }
         }
-        System.out.println(Arrays.deeptoString(island));
+        System.out.println(Arrays.deeptoString(countIsland(grid)));
+    }
+
+    public int countIsland(int[][] grid) {
+        int count = 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {//出现岛屿
+                    dfs(grid, i, j);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    public void dfs(int[][] grid, int i, int j) {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == 0) return;
+        grid[i][j] == 0;
+        dfs(grid, i + 1, j);
+        dfs(grid, i, j + 1);
+        dfs(grid, i - 1, j);
+        dfs(grid, i, j - 1);
     }
 }
 
 ```
+## 机器人可运动的范围
+>地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。<br>
+>一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
+<br>
+
+>来源：力扣（LeetCode）
+
 

@@ -4,12 +4,19 @@
         <link>http://localhost:1313/categories/machine-learning/</link>
         <description>machine learning - Category - fakeRichardWH的个人网站</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 26 Jan 2022 19:25:43 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/machine-learning/" rel="self" type="application/rss+xml" /><item>
-    <title>朴素贝叶斯 XGBOOST</title>
+    <title>XGBOOST</title>
+    <link>http://localhost:1313/post/ml02/</link>
+    <pubDate>Wed, 26 Jan 2022 19:25:43 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/ml02/</guid>
+    <description><![CDATA[XGBoost 由于它计算的准而且快，所以用在各大比赛当中使用的多，不要迷信深度学习 xGBoost = extreme + GBDT = extreme + Gradient + BoostDT Boosting -&gt; Boosting DT -&gt; gradient BDT -&gt; 使用了一阶梯度信息 所谓的最优函数]]></description>
+</item><item>
+    <title>朴素贝叶斯及监督学习模型的分类</title>
     <link>http://localhost:1313/post/ml01/</link>
     <pubDate>Wed, 26 Jan 2022 19:25:43 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://localhost:1313/post/ml01/</guid>
-    <description><![CDATA[朴素贝叶斯 解决的是多分类问题 边缘概率 $P(X) = \sum_{Y}P(X,Y)$ 从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定每个Y，对联合概率求和，从而消]]></description>
+    <description><![CDATA[朴素贝叶斯 目标: 解决的是多分类问题. 假设训练数据为$(X,Y)$,其中X为属性集合,Y为类别标记,这时候我们需要对新产生的样本x,进行类别预]]></description>
 </item><item>
     <title>推荐系统实验方法分类</title>
     <link>http://localhost:1313/post/recommendationsystem01/</link>

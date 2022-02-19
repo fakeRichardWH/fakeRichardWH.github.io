@@ -1,21 +1,21 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>python - Category - fakeRichardWH的个人网站</title>
+        <title>Python - Category - fakeRichardWH的个人网站</title>
         <link>http://localhost:1313/categories/python/</link>
-        <description>python - Category - fakeRichardWH的个人网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 21 Jan 2022 16:44:22 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/python/" rel="self" type="application/rss+xml" /><item>
+        <description>Python - Category - fakeRichardWH的个人网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 13 Feb 2022 16:44:22 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python中with使用及远离</title>
+    <link>http://localhost:1313/post/python03/</link>
+    <pubDate>Sun, 13 Feb 2022 16:44:22 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/python03/</guid>
+    <description><![CDATA[with关键字 with语句用于异常处理,相当于是对try...excepty...finally进行了封装,缩短了Python代码,简化了文]]></description>
+</item><item>
     <title>Lambda函数使用</title>
     <link>http://localhost:1313/post/python02/</link>
     <pubDate>Fri, 21 Jan 2022 16:44:22 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://localhost:1313/post/python02/</guid>
     <description><![CDATA[匿名函数 以lambda 作为关键字,可以在一行内完成定义和声明，这个匿名函数由于没有实际的名称，所以一般在Python中没有什么复杂的功能。 语]]></description>
-</item><item>
-    <title>Python迭代器及常用函数</title>
-    <link>http://localhost:1313/post/python01/</link>
-    <pubDate>Sat, 11 Dec 2021 15:41:12 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/post/python01/</guid>
-    <description><![CDATA[迭代器 可以被next()函数调用并且不断返回下一个值的对象统称为迭代器:Iterator 迭代对象 可以直接作用于for循环的对象，称为可迭代对]]></description>
 </item></channel>
 </rss>

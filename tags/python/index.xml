@@ -31,12 +31,5 @@
     <author>Author</author>
     <guid>http://localhost:1313/post/pandas01/</guid>
     <description><![CDATA[loc vs iloc loc函数：通过行索引 &ldquo;Index&rdquo; 中的具体值来取行数据（如取&quot;Index&quot;为&quot;A&quot;的行）可以认为是利用行]]></description>
-</item><item>
-    <title>Python迭代器及常用函数</title>
-    <link>http://localhost:1313/post/python01/</link>
-    <pubDate>Sat, 11 Dec 2021 15:41:12 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/post/python01/</guid>
-    <description><![CDATA[迭代器 可以被next()函数调用并且不断返回下一个值的对象统称为迭代器:Iterator 迭代对象 可以直接作用于for循环的对象，称为可迭代对]]></description>
 </item></channel>
 </rss>

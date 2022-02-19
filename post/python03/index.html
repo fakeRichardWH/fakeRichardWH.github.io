@@ -5,30 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>朴素贝叶斯及监督学习模型的分类 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="朴素贝叶斯及监督学习模型的分类" />
-<meta property="og:description" content="朴素贝叶斯 目标: 解决的是多分类问题. 假设训练数据为$(X,Y)$,其中X为属性集合,Y为类别标记,这时候我们需要对新产生的样本x,进行类别预" />
+        <title>Python中with使用及远离 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Python中with使用及远离" />
+<meta property="og:description" content="with关键字 with语句用于异常处理,相当于是对try...excepty...finally进行了封装,缩短了Python代码,简化了文" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/ml01/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-01-26T19:25:43+08:00" />
-<meta property="article:modified_time" content="2022-01-26T19:25:43+08:00" />
+<meta property="og:url" content="http://localhost:1313/post/python03/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-02-13T16:44:22+08:00" />
+<meta property="article:modified_time" content="2022-02-13T16:44:22+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://localhost:1313/logo.png"/>
 
-<meta name="twitter:title" content="朴素贝叶斯及监督学习模型的分类"/>
-<meta name="twitter:description" content="朴素贝叶斯 目标: 解决的是多分类问题. 假设训练数据为$(X,Y)$,其中X为属性集合,Y为类别标记,这时候我们需要对新产生的样本x,进行类别预"/>
+<meta name="twitter:title" content="Python中with使用及远离"/>
+<meta name="twitter:description" content="with关键字 with语句用于异常处理,相当于是对try...excepty...finally进行了封装,缩短了Python代码,简化了文"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/ml01/" /><link rel="prev" href="http://localhost:1313/post/pandas01/" /><link rel="next" href="http://localhost:1313/post/ml02/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/python03/" /><link rel="prev" href="http://localhost:1313/post/pandas04/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "朴素贝叶斯及监督学习模型的分类",
+        "headline": "Python中with使用及远离",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/post\/ml01\/"
-        },"genre": "post","keywords": "ML原理","wordcount":  1025 ,
-        "url": "http:\/\/localhost:1313\/post\/ml01\/","datePublished": "2022-01-26T19:25:43+08:00","dateModified": "2022-01-26T19:25:43+08:00","publisher": {
+            "@id": "http:\/\/localhost:1313\/post\/python03\/"
+        },"genre": "post","keywords": "with","wordcount":  311 ,
+        "url": "http:\/\/localhost:1313\/post\/python03\/","datePublished": "2022-02-13T16:44:22+08:00","dateModified": "2022-02-13T16:44:22+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -99,42 +99,75 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">朴素贝叶斯及监督学习模型的分类</h1><div class="content" id="content"><h1 id="朴素贝叶斯">朴素贝叶斯</h1>
-<p>目标: 解决的是多分类问题.
-假设训练数据为$(X,Y)$,其中X为属性集合,Y为类别标记,这时候我们需要对新产生的样本x,进行类别预测,最终目标是求出最大概率:$P(y|x)$作为样本的分类.</p>
-<h2 id="边缘概率-加法法则">边缘概率 (加法法则)</h2>
-<p>$P(X) = \sum_{Y}P(X,Y)$<br>
-从直观上理解这个式子，要消除随机变量Y对联合概率的影响，那么就要固定(确定)每个Y的值，对联合概率求和，从而消除X的影响</p>
-<h2 id="条件概率与联合概率的关系-乘法法则">条件概率与联合概率的关系 (乘法法则)</h2>
-<p>$P(X, Y) = P(Y|X)P(X) = P(Y|X)P(X)$<br>
-条件概率$P(Y|X)$中由于<strong>X</strong>作为条件,已经被确定了那么就相当于减少（消除）了一部分的不确定性，而两个变量的联合概率分布的不确定性更大，所以需要补充的就是X本身的不确定性.</p>
-<h2 id="联合概率分布">联合概率分布</h2>
-<p>$P(X,Y,Z) = P(X|Y,Z)P(X,Y|Z)P(Z)$
-$P(X,Y,Z)$的联合概率分布，需要的是以X为变量，将Y，Z作为确定条件来降低不确定性，而补充这一不确定性需要当Z确定时的X，Y的不确定性和Z单独的不确定性</p>
-<h3 id="朴素贝叶斯分类器">朴素贝叶斯分类器</h3>
-<h2 id="引入条件独立性假设">引入条件独立性假设</h2>
-<p>$P(X, Y) = P(Y)P(X)$
-此时由于X，Y是相互独立的，所以X无论确定还是不确定，对Y的条件概率无影响，从而可以将朴素贝叶斯推出来</p>
-<blockquote>
-<p>条件独立性假设：<strong>在标签一定(被确定)的基础上</strong>，X向量或者说特征向量，各个特征之间相互独立</p>
-</blockquote>
-<p>推导:<br></p>
-<p>$P(X^{(1)}=x^{(1)},X^{(2)}=x^{(2)}, &hellip;,X^{(n)}=x^{(n)}| Y = c_{k}) = \prod_{i}^{n}P(X^{(i)}=x^{(i)}|Y)$<br></p>
-<p>从而：<br></p>
-<p>$P(X=\bf{x}|Y = c_{k}) = \prod_{i}^{n}P(X^{(i)}=x^{(i)}|Y)$</p>
-<h1 id="监督学习模型分类">监督学习模型分类</h1>
-<h2 id="生成式模型">生成式模型</h2>
-<p>生成式模型,就是对每个类别分别建立一个模型,有多少个类别就建立多少个模型.学习的是条件概率分布:P(Y|X)=P(X|Y)P(Y)/P(X),一般常见的生成式模型就是<strong>朴素贝叶斯模型</strong>,因为需要对每个类别分别对特征集进行划分之后,再进行统计.<br>
-比如,一个信用评级模型中: 类别标签为{高, 中, 低},而属性集合包括了{房产数量,房产面积,年均收入},那么模型学习的就是三个不同的分布:$P(高|房产数量,房产面积,年均收入)$$P(中|房产数量,房产面积,年均收入)$$P(低|房产数量,房产面积,年均收入)$
-而当我们得到一个未知的样本X,将其输入到三个分布中,计算出使得某个类别概率最大的就是该样本对应的类别,比如:
-P(高|X) = 0.4,P(中|X)=0.5, P(低|X) = 0.1
-那么我们可以认为这个样本X对应的信用评级类别就是<strong>中</strong>.</p>
-<h3 id="常见的生成式模型">常见的生成式模型</h3>
-<p>HMM(隐马尔可夫模型),朴素贝叶斯模型,(GMM)高斯混合模型,LDA,马尔可夫随机场模型</p>
-<h2 id="判别式模型">判别式模型</h2>
-<p>根据训练数据得到分类函数和划分界面,比如SVM模型就是得到多个分界面,然后直接计算条件概率.输入特征X,直接用一个模型将历史数据输入去学习拟合p(Y|X).</p>
-<h3 id="常见的判别式模型">常见的判别式模型</h3>
-</div><div id="comments"></div></div></div>
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Python中with使用及远离</h1><div class="content" id="content"><h1 id="with关键字">with关键字</h1>
+<p>with语句用于异常处理,相当于是对<code>try...excepty...finally</code>进行了封装,缩短了<code>Python</code>代码,简化了文件流资源的管理</p>
+<h2 id="一个有问题的代码案例">一个有问题的代码案例</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./test.txt&#34;</span><span class="p">,</span><span class="s2">&#34;w&#34;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;hello world!&#34;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果代码调用<code>write()</code>的过程中,出现异常,则<code>close()</code>将无法执行,从而导致该<code>test.txt</code>会被程序持续占用无法释放.</p>
+<h2 id="改进">改进</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./test_runoob.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;hello world!&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;OS error raised!&#34;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这段代码的<code>finally</code>无论是否会发生资源的占用都会将对应的文件流资源关闭,不会因为执行了异常而占用资源.</p>
+<h2 id="使用with">使用with</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./test.txt&#34;</span><span class="p">,</span><span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;hello world!&#34;</span><span class="p">)</span>
+<span class="c1"># 上面这个代码等效于try...except...finally</span>
+<span class="c1"># 验证资源是否关闭</span>
+<span class="n">f</span><span class="o">.</span><span class="n">closed</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kc">True</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="使用with-1">使用with</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./test.txt&#34;</span><span class="p">,</span><span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div id="comments"></div></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">RichardWWHH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
