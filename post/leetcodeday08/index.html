@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Leetcode-二叉树的遍历 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Leetcode-二叉树的遍历" />
+<meta property="og:description" content="用递归及非递归方式实现二叉树的先/中/后序遍历 递归实现 递归过程,就是会访问同一个节点三次,而先序/中序/后序取决于打印的时机 节点数据结构 1 2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/leetcodeday08/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-27T19:57:26+08:00" />
+<meta property="article:modified_time" content="2022-01-27T19:57:26+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+
+<meta name="twitter:title" content="Leetcode-二叉树的遍历"/>
+<meta name="twitter:description" content="用递归及非递归方式实现二叉树的先/中/后序遍历 递归实现 递归过程,就是会访问同一个节点三次,而先序/中序/后序取决于打印的时机 节点数据结构 1 2"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/leetcodeday08/" /><link rel="prev" href="http://localhost:1313/post/leetcodeday03/" /><link rel="next" href="http://localhost:1313/post/pandas02/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Leetcode-二叉树的遍历",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/post\/leetcodeday08\/"
+        },"genre": "post","wordcount":  2773 ,
+        "url": "http:\/\/localhost:1313\/post\/leetcodeday08\/","datePublished": "2022-01-27T19:57:26+08:00","dateModified": "2022-01-27T19:57:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "RichardWWHH"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="fakeRichardWH的个人网站"></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/post/"> 文章/articles </a><a class="menu-item" href="/tags/"> 标签/tags </a><a class="menu-item" href="/categories/"> 分类/categories </a><a class="menu-item" href="/about/"> 关于我/about me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="fakeRichardWH的个人网站"></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/post/" title="">文章/articles</a><a class="menu-item" href="/tags/" title="">标签/tags</a><a class="menu-item" href="/categories/" title="">分类/categories</a><a class="menu-item" href="/about/" title="">关于我/about me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Leetcode-二叉树的遍历</h1><div class="content" id="content"><h1 id="用递归及非递归方式实现二叉树的先中后序遍历">用递归及非递归方式实现二叉树的先/中/后序遍历</h1>
+<h2 id="递归实现">递归实现</h2>
+<p>递归过程,就是会访问同一个节点三次,而先序/中序/后序取决于打印的时机</p>
+<h3 id="节点数据结构">节点数据结构</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Node</span> <span class="o">{</span>
+    <span class="c1">//这是Node的结构
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">int</span> <span class="n">value</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">Node</span> <span class="n">left</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">Node</span> <span class="n">right</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Node</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看出:树本身就是递归定义的,二叉树的左子树也是同一个数据结构,右子树也是同一个数据结构</p>
+<h3 id="先序遍历">先序遍历</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">preOrderRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// base case
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">value</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span>
+    <span class="n">preOrderRecur</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+    <span class="n">preOrderRecur</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="中序遍历">中序遍历</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">inOrderRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// base case
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">preOrderRecur</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">value</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span>
+    <span class="n">preOrderRecur</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="后序遍历">后序遍历</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">postOrderRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// base case
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">preOrderRecur</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+    <span class="n">preOrderRecur</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">value</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="非递归实现">非递归实现</h2>
+<p>递归实现起来很简单,但是递归调用会耗费很多内存(栈空间),同时也更加耗时;递归调用无非就是将函数帧入栈和出栈的操作<strong>用一个普通的stack</strong>实现,只是需要将栈中保存的内容变为树节点
+需要明确两件事:</p>
+<ol>
+<li>什么情况下入栈</li>
+<li>什么情况下出栈</li>
+</ol>
+<h3 id="递归的非递归实现">递归的非递归实现</h3>
+<p>仔细观察递归调用的过程，我们会发现这样的规律：</p>
+<ol>
+<li>不管三七二十一先把<strong>从根节点开始的所有左子树节点</strong>放入栈中</li>
+<li>查看栈顶元素，如果栈顶元素<strong>有右子树那么右子树入栈</strong>并以右子树为新的根节点<strong>重复过程1</strong>直到栈空为止</li>
+</ol>
+<p>那么我们就可以思考什么时候入栈/出栈了:</p>
+<ol>
+<li>什么时候入栈?
+1.1 最开始时,将根节点开始的所有左子树节点放入栈内.
+1.2 如果栈顶元素有右子树,那么就对其右子树重复步骤1</li>
+<li>什么时候出栈?
+2.1 查看栈顶元素时,实际上可以将栈顶元素pop掉,是因为查看栈顶元素的同时我们能够确认:<strong>当前节点的左子树一定已经处理完毕了</strong>
+2.2 因此对于栈顶元素而言,需要的仅仅是拿到其右子树信息,再拿到右子树后该节点可以完全放心的pop掉</li>
+</ol>
+<h2 id="关键">关键</h2>
+<p>明确了各个节点压栈,打印,弹栈的时机!</p>
+<p>用代码来表示:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">nonRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+     <span class="c1">// 不管三七二十一,现将所有左子树加入栈中
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(</span><span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Node</span> <span class="n">top</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
+    <span class="n">Node</span> <span class="n">curRight</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">right</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(!</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+       
+        <span class="c1">// 如果栈顶元素有右子树,将其右子树入栈,并将栈顶元素弹出
+</span><span class="c1"></span>        <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+        <span class="c1">// 对栈顶元素的右子树作相同处理
+</span><span class="c1"></span>        <span class="k">while</span> <span class="o">(</span><span class="n">curRight</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">curRight</span><span class="o">);</span>
+            <span class="n">curRight</span> <span class="o">=</span> <span class="n">curRight</span><span class="o">.</span><span class="na">left</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="先序的非递归实现">先序的非递归实现</h3>
+<p>总体思路: 对于每棵树而言都是先输出根,再到左子树,再到右子树;而我们压栈的过程是希望将左子树作为整体压入的,弹出的时候会先弹出最左侧的节点,这样就不能达到需要的效果了,所以我们可以在根节点入栈前,对其打印;然后压入右子树,再压入左子树
+<br>
+所以我们的策略就是,当左子树的节点弹出后,<strong>不要将其根节点对应的右子树立刻弹出,而是将左子树的剩余节点迅速压入栈</strong>,从而保证栈中是左子树的整体被压栈了.
+具体步骤如下:</p>
+<ol>
+<li>对于每个节点而言,先压入自身,然后弹出时就打印</li>
+<li>如果有右子节点,那么先压入右子节点</li>
+<li>如果有左子节点,那么先压入左子节点</li>
+<li>只要栈不为空,就进行弹出</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">preOrderNonRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
+    <span class="k">while</span> <span class="o">(!</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>   
+        <span class="n">Node</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">value</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="先序非递归实现的总结">先序非递归实现的总结</h2>
+<p>现将头节点加入栈中(保证栈不是空的)
+循环的每次迭代中:</p>
+<ol>
+<li>从栈中弹出一个当前节点cur</li>
+<li>打印这个节点cur 或者 (处理当前cur节点,比如加入结果集list中)</li>
+<li>如果cur节点有右子节点和左子节点的话,先压入右子节点再压入左子节点</li>
+<li>重复这个循环直到栈为空</li>
+</ol>
+<h3 id="中序的非递归实现">中序的非递归实现</h3>
+<p>总体思路: 使用栈来代替程序中的递归调用栈.<br>
+对于中序遍历中的任意一个节点:先访问其<strong>左孩子</strong>,而其<strong>左孩子节点</strong>可以视为<strong>根节点</strong>,于是我们将这个左孩子压栈(记录下来),然后继续访问其左孩子的<strong>左孩子节点</strong>,直到遇到左孩子节点为空的情况,这时候我们就可以将所有访问过的节点弹出栈并且打印.
+之后对栈顶的节点去访问其右孩子,并且对其右孩子按照上面相同的逻辑进行处理; <br>
+那么对于任意一个非空节点<strong>N</strong>:</p>
+<ol>
+<li>如果其左孩子<strong>不为空</strong>,则将该节点N<strong>入栈</strong>,然后用N来记录N节点的左孩子 (也就是将左孩子设置为当前的N),然后对当前节点N再进行相同的处理;</li>
+<li>如果左孩子<strong>为空</strong>,则<strong>弹出</strong>栈顶元素并打印 (说明当前节点是最左的),并且将当前的N来记录栈顶节点的右孩子(也就是将右孩子设置为当前的N);</li>
+<li>直到<strong>N为null且栈元素为空</strong>,遍历完成 (说明我们的循环条件是或)</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">inOrderNonRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// 使用一个栈
+</span><span class="c1"></span>    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="c1">// 利用一个节点来记录当前访问的节点
+</span><span class="c1"></span>    <span class="n">Node</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(!</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">||</span> <span class="n">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 持续压栈直到左孩子为空
+</span><span class="c1"></span>        <span class="k">while</span> <span class="o">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">);</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">left</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">// cur一旦不是空的
+</span><span class="c1"></span>        <span class="n">cur</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+        <span class="c1">// 打印这一栈顶元素
+</span><span class="c1"></span>        <span class="c1">// 也可以是将结果 添加到结果list中
+</span><span class="c1"></span>        <span class="c1">//
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">value</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">right</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>另一种写法:每次只处理当前这个节点,处理完就相应的弹栈打印</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">inOrderNonRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="c1">// 使用一个栈
+</span><span class="c1"></span>    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="c1">// 利用一个节点来记录当前访问的节点
+</span><span class="c1"></span>    <span class="n">Node</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span><span class="o">;</span>
+    <span class="c1">// 栈元素为空,且当前节点也为空说明完成了遍历
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(!</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">||</span> <span class="n">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">);</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">left</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">// cur == null 说明到了最左侧的左子节点
+</span><span class="c1"></span>            <span class="c1">// 复用这个节点cur
+</span><span class="c1"></span>            <span class="n">cur</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span> 
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">value</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span>
+            <span class="c1">// 第二次循环会通过同一个父节点返回到右子节点
+</span><span class="c1"></span>            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">right</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="中序非递归实现总结">中序非递归实现总结</h2>
+<p>中序非递归的实现逻辑不同于前序和后序的非递归实现,就在于它对于根节点的打印时机处理不一样,而且要尽可能的找到最左的子树(左边界),并利用栈将最左的节点放在栈的最上方,之后选择弹出,返回了父节点,此时如果遇到有右子树时,再压入栈,重复上面的操作
+压栈和打印的顺序就是:</p>
+<ol>
+<li>压入头节点,</li>
+<li>压入左节点(压栈到空为止,弹出并打印)</li>
+<li>弹出父节点并打印</li>
+<li>如果遇到右树,做相同的操作</li>
+</ol>
+<h3 id="后序的非递归实现">后序的非递归实现</h3>
+<p>总体思路:
+后序遍历的输出就是:先左子树,后右子树,最后是根节点.
+<br>而先序的输出顺序则是:根,左,右;但是前面我们知道它的<strong>压栈的顺序</strong>是:根节点,右子节点,左子节点;
+<br>从而保证了对于每棵子树先输出根节点(由于压栈后立刻又弹出打印了),再到左子节点,最后输出右子节点的顺序
+借助这个思路我们可以利用两个栈,一个栈用于压栈调整顺序,另一个栈收集最终的打印结果</p>
+<p>方法1:
+使用两个栈,由于第一个栈是按照<strong>中左右</strong>压入栈,然后弹出时就是<strong>左右中</strong>,利用第二个栈收集这个弹出结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">postOrderNonRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">stack1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">stack2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">//第一个栈用来调整顺序
+</span><span class="c1"></span>    <span class="n">stack1</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
+    <span class="k">while</span> <span class="o">(!</span><span class="n">stack1</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">Node</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">stack1</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+        <span class="c1">// 栈1中将cur的左节点压入
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack1</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">// 栈1中将cur的右节点压入
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack1</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">stack2</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="c1">//最后栈2中的元素就是所有的后序遍历结果
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(!</span><span class="n">stack2</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">stack2</span><span class="o">.</span><span class="na">pop</span><span class="o">().</span><span class="na">value</span> <span class="o">+</span>  <span class="s">&#34; &#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>方法2:
+直接用双端队列来保存这个栈中的结果,达到先入先出的目的,其实输出还是按照栈2的形式输出,只是能够将结果直接保存下来而已</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">postOrderNonRecur</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">//第一个栈用来调整顺序
+</span><span class="c1"></span>    <span class="n">stack1</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
+    <span class="k">while</span> <span class="o">(!</span><span class="n">stack</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">Node</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+        <span class="c1">// 直接利用FIFO性质将所有结果向头部不断加入
+</span><span class="c1"></span>        <span class="n">queue</span><span class="o">.</span><span class="na">offerFirst</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">val</span><span class="o">);</span>
+        <span class="c1">// 栈中将cur的左节点压入
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">// 栈中将cur的右节点压入
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">//最后将结果输出
+</span><span class="c1"></span>    <span class="k">while</span> <span class="o">(!</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">pollFirst</span><span class="o">().</span><span class="na">value</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div id="comments"></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">RichardWWHH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>ML实战-特征工程-Two sigma租房数据 - fakeRichardWH的个人网站</title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="ML实战-特征工程-Two sigma租房数据" />
+<meta property="og:description" content="步骤: 1.获取数据 在terminal中输入: 1 2 wget https://cdn.coggle.club/kaggle/two-sigma-connect-rental-listing-inquiries.zip unzip two-sigma-connect-rental-listing-inquiries.zip 2.读取数据 1 2 3 4 import pandas as pd import numpy as np test_df = pd.read_json(&#34;train.json.zip&#34;, compression = &#34;zip&#34;) test_df = pd.read_json(&#34;test.json.zip&#34;, compression = &#34;zip&#34;) 3.特征工程 数据统计 【特" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ml%E5%AE%9E%E6%88%9801/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-02-21T16:48:38+08:00" />
+<meta property="article:modified_time" content="2022-02-21T16:48:38+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+
+<meta name="twitter:title" content="ML实战-特征工程-Two sigma租房数据"/>
+<meta name="twitter:description" content="步骤: 1.获取数据 在terminal中输入: 1 2 wget https://cdn.coggle.club/kaggle/two-sigma-connect-rental-listing-inquiries.zip unzip two-sigma-connect-rental-listing-inquiries.zip 2.读取数据 1 2 3 4 import pandas as pd import numpy as np test_df = pd.read_json(&#34;train.json.zip&#34;, compression = &#34;zip&#34;) test_df = pd.read_json(&#34;test.json.zip&#34;, compression = &#34;zip&#34;) 3.特征工程 数据统计 【特"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="static/images/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/post/ml%E5%AE%9E%E6%88%9801/" /><link rel="prev" href="http://localhost:1313/post/python03/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ML实战-特征工程-Two sigma租房数据",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/post\/ml%E5%AE%9E%E6%88%9801\/"
+        },"genre": "post","keywords": "pandas, Python","wordcount":  800 ,
+        "url": "http:\/\/localhost:1313\/post\/ml%E5%AE%9E%E6%88%9801\/","datePublished": "2022-02-21T16:48:38+08:00","dateModified": "2022-02-21T16:48:38+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "RichardWWHH"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="fakeRichardWH的个人网站"></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/post/"> 文章/articles </a><a class="menu-item" href="/tags/"> 标签/tags </a><a class="menu-item" href="/categories/"> 分类/categories </a><a class="menu-item" href="/about/"> 关于我/about me </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="fakeRichardWH的个人网站"></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/post/" title="">文章/articles</a><a class="menu-item" href="/tags/" title="">标签/tags</a><a class="menu-item" href="/categories/" title="">分类/categories</a><a class="menu-item" href="/about/" title="">关于我/about me</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">ML实战-特征工程-Two sigma租房数据</h1><div class="content" id="content"><h1 id="步骤">步骤:</h1>
+<h2 id="1获取数据">1.获取数据</h2>
+<p>在terminal中输入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://cdn.coggle.club/kaggle/two-sigma-connect-rental-listing-inquiries.zip
+unzip two-sigma-connect-rental-listing-inquiries.zip
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2读取数据">2.读取数据</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&#34;train.json.zip&#34;</span><span class="p">,</span> <span class="n">compression</span> <span class="o">=</span> <span class="s2">&#34;zip&#34;</span><span class="p">)</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&#34;test.json.zip&#34;</span><span class="p">,</span> <span class="n">compression</span> <span class="o">=</span> <span class="s2">&#34;zip&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3特征工程">3.特征工程</h2>
+<h3 id="数据统计">数据统计</h3>
+<p><font color='red'> <strong>【特征提取步骤1.】</strong> </font>
+<font color='red'> <strong>1、【统计训练集、测试集中所有房间个数，bedrooms与bathroom之和】，新增一列特征命名为num_rooms</strong> </font></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;num_rooms&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;bedrooms&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;bathrooms&#34;</span><span class="p">]</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;num_rooms&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;bedrooms&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;bathrooms&#34;</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><font color='red'> <strong>2、【统计训练集、测试集中所有照片的数量】，新增一列特征命名为num_photos</strong> </font></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;num_photos&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;photos&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;num_photos&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;photos&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>Pandas.Series.apply(func)</code>是pandas中提供对Series中的值产生相应<code>func</code>作用的一个函数,上面的例子就是传入了一个len函数,对photos这个Series中的每个value也就是list元素进行求长度的运算,你也可以自定义一个func代替len计算</p>
+<h4 id="一个使用apply的例子">一个使用apply的例子🌰</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">
+<span class="o">&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;London&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;Helsinki&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;</span> <span class="n">s</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+<span class="n">London</span>      <span class="mi">20</span>
+<span class="n">New</span> <span class="n">York</span>    <span class="mi">21</span>
+<span class="n">Helsinki</span>    <span class="mi">12</span>
+<span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+<span class="c1"># 使用匿名函数 对Series中的每个元素进行平方</span>
+<span class="c1"># lambda x 中的x就是Series中的每个变量</span>
+<span class="o">&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+<span class="n">London</span>      <span class="mi">400</span>
+<span class="n">New</span> <span class="n">York</span>    <span class="mi">441</span>
+<span class="n">Helsinki</span>    <span class="mi">144</span>
+<span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><font color='red'> <strong>3、【删除照片这一列】</strong> </font></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>Pandas.DataFrame.drop()</code>方法默认是对每一行进行操作,如果要对列操作需要将axis设置为1</p>
+<p><font color='red'> <strong>4、【对于具有文本特征的列进行分析】,统计训练集、测试集中description不重复单词个数，并删除原始description列</strong> </font></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 这里先是用匿名函数 对 description列的每个元素,用正则表达式带有空格的部分做了拆分</span>
+<span class="c1"># 其次再用set方法保留不重复的单词,并进行个数统计len</span>
+
+<span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;num_description_words_Distinct&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))))</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;num_description_words_Distinct&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">))))</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">test_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><font color='red'> <strong>5、【对于时间/日期元素处理】将时间元素的字符串列转为datetime object</strong> </font></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">])</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">])</span>
+
+<span class="c1"># 获取年/月/日/小时</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created_hr&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created_d&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created_m&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created_y&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created_hr&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created_d&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created_m&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created_y&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s2">&#34;created&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><font color='red'> <strong>4、【count_encoder】</strong> </font></p>
+</div><div id="comments"></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">RichardWWHH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

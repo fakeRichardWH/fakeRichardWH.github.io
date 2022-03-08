@@ -4,12 +4,26 @@
         <link>http://localhost:1313/categories/leetcode/</link>
         <description>leetcode - Category - fakeRichardWH的个人网站</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 27 Jan 2022 19:57:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/leetcode/" rel="self" type="application/rss+xml" /><item>
+    <title>Leetcode-二叉树的遍历</title>
+    <link>http://localhost:1313/post/leetcodeday08/</link>
+    <pubDate>Thu, 27 Jan 2022 19:57:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/leetcodeday08/</guid>
+    <description><![CDATA[用递归及非递归方式实现二叉树的先/中/后序遍历 递归实现 递归过程,就是会访问同一个节点三次,而先序/中序/后序取决于打印的时机 节点数据结构 1 2]]></description>
+</item><item>
     <title>Leetcode-广度优先搜索模版</title>
     <link>http://localhost:1313/post/leetcodeday03/</link>
     <pubDate>Thu, 27 Jan 2022 19:57:26 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://localhost:1313/post/leetcodeday03/</guid>
     <description><![CDATA[广度优先搜索模版 核心思路 BFS核心思想就是把问题抽象为一个图，从一个节点开始，向四周扩散。一般来说，BFS都会使用到一个队列，这样就可以将一]]></description>
+</item><item>
+    <title>Leetcode-广度优先搜索模版</title>
+    <link>http://localhost:1313/post/leetcodeday07/</link>
+    <pubDate>Thu, 27 Jan 2022 19:57:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/leetcodeday07/</guid>
+    <description><![CDATA[无向图中连通分量的数目 给定编号从 0 到 n-1 的 n 个节点和一个无向边列表（每条边都是一对节点），请编写一个函数来计算无向图中连通分量的数目。 创建Ar]]></description>
 </item><item>
     <title>leetcode-找到两数组中的中位数</title>
     <link>http://localhost:1313/post/leetcodeday02/</link>

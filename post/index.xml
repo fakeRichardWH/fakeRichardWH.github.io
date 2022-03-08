@@ -6,7 +6,16 @@
     <description>Recent content in Posts on fakeRichardWH的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Feb 2022 16:44:22 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Feb 2022 16:48:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ML实战-特征工程-Two sigma租房数据</title>
+      <link>http://localhost:1313/post/ml%E5%AE%9E%E6%88%9801/</link>
+      <pubDate>Mon, 21 Feb 2022 16:48:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ml%E5%AE%9E%E6%88%9801/</guid>
+      <description>步骤: 1.获取数据 在terminal中输入: 1 2 wget https://cdn.coggle.club/kaggle/two-sigma-connect-rental-listing-inquiries.zip unzip two-sigma-connect-rental-listing-inquiries.zip 2.读取数据 1 2 3 4 import pandas as pd import numpy as np test_df = pd.read_json(&amp;#34;train.json.zip&amp;#34;, compression = &amp;#34;zip&amp;#34;) test_df = pd.read_json(&amp;#34;test.json.zip&amp;#34;, compression = &amp;#34;zip&amp;#34;) 3.特征工程 数据统计 【特</description>
+    </item>
+    
     <item>
       <title>Python中with使用及远离</title>
       <link>http://localhost:1313/post/python03/</link>
@@ -44,12 +53,30 @@
     </item>
     
     <item>
+      <title>Leetcode-二叉树的遍历</title>
+      <link>http://localhost:1313/post/leetcodeday08/</link>
+      <pubDate>Thu, 27 Jan 2022 19:57:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/leetcodeday08/</guid>
+      <description>用递归及非递归方式实现二叉树的先/中/后序遍历 递归实现 递归过程,就是会访问同一个节点三次,而先序/中序/后序取决于打印的时机 节点数据结构 1 2</description>
+    </item>
+    
+    <item>
       <title>Leetcode-广度优先搜索模版</title>
       <link>http://localhost:1313/post/leetcodeday03/</link>
       <pubDate>Thu, 27 Jan 2022 19:57:26 +0800</pubDate>
       
       <guid>http://localhost:1313/post/leetcodeday03/</guid>
       <description>广度优先搜索模版 核心思路 BFS核心思想就是把问题抽象为一个图，从一个节点开始，向四周扩散。一般来说，BFS都会使用到一个队列，这样就可以将一</description>
+    </item>
+    
+    <item>
+      <title>Leetcode-广度优先搜索模版</title>
+      <link>http://localhost:1313/post/leetcodeday07/</link>
+      <pubDate>Thu, 27 Jan 2022 19:57:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/leetcodeday07/</guid>
+      <description>无向图中连通分量的数目 给定编号从 0 到 n-1 的 n 个节点和一个无向边列表（每条边都是一对节点），请编写一个函数来计算无向图中连通分量的数目。 创建Ar</description>
     </item>
     
     <item>

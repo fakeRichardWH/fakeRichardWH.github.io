@@ -3,7 +3,14 @@
         <title>pandas - Tag - fakeRichardWH的个人网站</title>
         <link>http://localhost:1313/tags/pandas/</link>
         <description>pandas - Tag - fakeRichardWH的个人网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 11 Feb 2022 17:54:06 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/pandas/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 21 Feb 2022 16:48:38 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/pandas/" rel="self" type="application/rss+xml" /><item>
+    <title>ML实战-特征工程-Two sigma租房数据</title>
+    <link>http://localhost:1313/post/ml%E5%AE%9E%E6%88%9801/</link>
+    <pubDate>Mon, 21 Feb 2022 16:48:38 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/post/ml%E5%AE%9E%E6%88%9801/</guid>
+    <description><![CDATA[步骤: 1.获取数据 在terminal中输入: 1 2 wget https://cdn.coggle.club/kaggle/two-sigma-connect-rental-listing-inquiries.zip unzip two-sigma-connect-rental-listing-inquiries.zip 2.读取数据 1 2 3 4 import pandas as pd import numpy as np test_df = pd.read_json(&#34;train.json.zip&#34;, compression = &#34;zip&#34;) test_df = pd.read_json(&#34;test.json.zip&#34;, compression = &#34;zip&#34;) 3.特征工程 数据统计 【特]]></description>
+</item><item>
     <title>Pandas数据查询</title>
     <link>http://localhost:1313/post/pandas04/</link>
     <pubDate>Fri, 11 Feb 2022 17:54:06 &#43;0800</pubDate>
